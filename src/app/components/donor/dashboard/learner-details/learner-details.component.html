@@ -1,0 +1,48 @@
+<nb-card card-background-color="#ffffff">
+
+    <label class="text-success"><i class="nb-coffee-maker"></i> שם הלומד
+
+    </label>
+
+{{learner.learnerName}}
+<br>
+<label class="text-success">
+    <i class="nb-keypad"></i> מייל</label>
+{{learner.learnerEmail}}
+<!-- if is a system learner -->
+<div *ngIf="learner.startDate!=null">
+<label class="text-success">
+    <i class="nb-person"></i>מין</label>
+<br>
+{{learner.gender}}
+<label class="text-success">
+    <i class="nb-lightbulb"></i>
+  שם עיסוק
+</label>
+<br>
+{{learner.occuptionName}}
+
+<label class="text-success">תאריך התחלת חברות בתוכנית </label>
+<br>
+{{learner.startDate}}
+<label class="text-success">
+  תאריך סיום חברות בתוכנית
+</label>
+<br>
+{{learner.endDate}}
+<label class="text-success">מוכנות להודעות דחופות</label>
+<br>
+{{learner.sosRequests}}
+</div>
+
+<!-- for group learners -->
+<div *ngIf="learner.startDate==null">
+<label class="text-success">שם קבוצה:</label>
+<br>
+{{learner.groupName}}
+<label class="text-success"> מוכנות להיות לומד מערכת:</label>
+<br>
+{{learner.wantsToJoin}}
+</div>
+
+</nb-card>
