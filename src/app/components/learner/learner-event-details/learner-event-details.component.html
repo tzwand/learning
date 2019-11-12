@@ -1,0 +1,67 @@
+
+
+<div class="rtl">
+<nb-card accent="success" card-background-color="#ffffff">
+    <nb-card-header>
+
+        <h3 class="text-info">שלום {{event.extendedProps.learnerName}},
+            תודה שבחרת באוצר הלימוד  </h3>
+  </nb-card-header>
+  <nb-card-body>
+        <!-- <h3 class="text-info">
+                <i class="nb-person"></i>  {{event.extendedProps.learnerName}} </h3>
+            <br> -->
+
+   <h3 class="text-info">
+               בחרת ב: </h3>
+  <br>
+
+
+  <!-- <h4 class="text-success">
+        <i class="nb-person"></i>מטרת הבקשה</h4>
+    {{request.reqPurpose}}
+    <br> -->
+     <h4 class="text-success">
+    <i class="nb-person"></i>קוד ספר </h4>
+    {{event.extendedProps.bookId}}
+    <h4 class="text-success">
+    <i class="nb-person"></i> שם ספר  </h4>
+    {{event.title}}
+    <h4 class="text-success">
+        <i class="nb-person"></i>פרטים נוספים </h4>
+    {{event.extendedProps.extraInfo}}
+    <br>
+ 
+    <h4 class="text-success"> 
+             <i class="nb-person"></i> תאריך התחלה</h4>
+        {{event.start}}
+        <br>
+        <h4 class="text-success">
+            <i class="nb-person"></i>תאריך סיום</h4>
+            {{event.end}}
+        <br>
+        <!-- <h4 class="text-success">
+            <i class="nb-person"></i> טווח זמן</h4>
+        {{request.timeDesc}}
+        <br>
+        <h4 class="text-success">
+            <i class="nb-person"></i> סוג טווח זמן </h4>
+        {{request.timeId}}
+        <br>
+        <h4 class="text-success">
+            <i class="nb-person"></i> תאריך סיום הרשמה</h4>
+        {{request.registerEndDate}} -->
+    <!-- <h4 class="text-success">
+        <i class="nb-person"></i> תשלום  </h4>
+    {{request.payment}}
+    <h4 class="text-success">
+        <i class="nb-person"></i> תאריך להגדלת תשלום</h4>
+    {{request.registerEndDate}}
+    <h4 class="text-success">
+        <i class="nb-person"></i> תשלום מוגדל  </h4>
+    {{request.registerEndDate}} -->
+    <br>
+  <button nbButton (click)="submit()">אישור</button>
+  </nb-card-body>
+  </nb-card>
+</div>

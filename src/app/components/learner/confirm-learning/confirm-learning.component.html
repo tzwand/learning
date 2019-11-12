@@ -1,0 +1,45 @@
+<div class="rtl">
+<nb-card accent="success" card-background-color="#ffffff">
+  <nb-card-header>
+      <h3 class="text-success">תודה שבחרת באוצר הלימוד  </h3>
+</nb-card-header>
+<nb-card-body>
+    <h3 class="text-info">
+        בחרת ב: </h3>
+<br>
+<h4 class="text-success">
+    <i class="nb-person"></i>קוד ספר </h4>
+    {{this.offer.bookId}}
+    <br>
+    <h4 class="text-success">
+<i class="nb-person"></i> שם ספר  </h4>
+{{this.offer.BookName}}
+<br>
+<h4 class="text-success">
+<i class="nb-person"></i> מטרת הבקשה   </h4>
+{{this.offer.reqPurpose}}
+<br>
+<h4 class="text-success">
+    <i class="nb-person"></i>פרטים נוספים </h4>
+{{this.offer.extraInfo}}
+<br>
+<h4 class="text-success"> 
+    <i class="nb-person"></i> תדירות </h4>
+    {{this.offer.timeDesc}}
+<br>
+
+<h4 class="text-success"> 
+         <i class="nb-person"></i> תאריך התחלה</h4>
+         {{this.offer.reqEndDate}}
+    <br>
+    <h4 class="text-success">
+        <i class="nb-person"></i>תאריך סיום</h4>
+        {{this.offer.reqStartDate}}
+    <br>
+    <br>
+<button nbButton (click)="submit(true)">להצטרפות</button>
+<button nbButton (click)="submit(false)">ביטול</button>
+</nb-card-body>
+</nb-card>
+
+  </div>

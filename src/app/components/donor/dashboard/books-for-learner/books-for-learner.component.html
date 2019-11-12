@@ -1,0 +1,24 @@
+<nb-card *ngFor="let book of books" card-background-color="#ffffff">
+                <label class="text-success">
+                  <i class="nb-person"></i>שם הספר</label>
+              <br>
+              {{book.BookName}}
+              <label class="text-success">
+                  <i class="nb-lightbulb"></i>
+                תשלום
+              </label>
+              {{book.Bookpayment}}
+              <label class="text-success">
+                <i class="nb-person"></i>תיאור קצר על הספר:</label>
+            <br>
+            {{book.Bookinfo}}
+            <!-- <label class="text-success">
+                <i class="nb-lightbulb"></i>
+              תאריך התחלה
+            </label>
+            <label class="text-success">
+              <i class="nb-person"></i>תאריך סיום</label>
+          <br>
+          {{book.gender}} -->
+
+        </nb-card>

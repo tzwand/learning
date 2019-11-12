@@ -1,0 +1,36 @@
+
+<!-- <br> -->
+<h4>הגדר סוג טווח זמן</h4>
+<br>
+
+<div *ngIf="req.times!=null">
+<nb-select multiple status="primary" placeholder="בחר..." filled="false" name="multiselect" (selectedChange)="onMenuItemSelected($event)">
+  <nb-option-group  title="בחר...">
+  <nb-option *ngFor="let t of req.times" value="{{t.timeDesc}}">{{t.timeDesc}}</nb-option>
+</nb-option-group>
+</nb-select>
+</div>
+<br>
+<!-- <select id="time" name="select"><br>
+  <option *ngFor="let t of times" name="timeDesc">{{t.timeDesc}}</option>
+</select> -->
+<h4>הגדר טווח זמן: </h4>
+<br>
+<input nbInput
+fullWidth
+placeholder="Form Picker"
+[nbDatepicker]="formpicker"
+[formControl]="dateFormControl"
+#formControl="ngForm">
+<nb-rangepicker #formpicker></nb-rangepicker>
+<!-- <p>Is valid: {{ dateFormControl.valid }}</p> -->
+<!-- <br>
+<br> -->
+
+<h4>הגדר תאריך אחרון להרשמה</h4>
+<input [nbDatepicker]="datepicker">
+<nb-datepicker #datepicker></nb-datepicker>
+<!-- <input [nbDatepicker]="datepicker" [formControl]="endDateFormControl" >
+<nb-datepicker name="endDate" #datepicker [(ngModel)]="req.registerEndDate"></nb-datepicker> -->
+<br>
+<!-- <button (click)="next()">הבא</button> -->
