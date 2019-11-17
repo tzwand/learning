@@ -39,19 +39,19 @@ export class GroupComponent implements OnInit {
     // this.Occupations = this.req.getOccuptions()
   }
   onMenuItemSelected(event){
+   
     //event -- string array of selected items
     console.log(event);
     for(let i=0;i<event.length;i++){
       console.log(event[i]);
+// first allow more than one occupation id
+        //  this.req.request.occuptionId+=event[i]
     }
   }
   mychange(num) {
-
      if (num == 0)
      if(this.viewOccupations.find(x=>x.gender=="male")==undefined)
       this.viewOccupations = this.viewOccupations.concat(this.occupations.filter(v => v.gender == "male"))
-    
-      
       if(this.viewOccupations.find(x=>x.gender=="female")==undefined)
       if (num == 1)
       this.viewOccupations = this.viewOccupations.concat(this.occupations.filter(v => v.gender == "female"))

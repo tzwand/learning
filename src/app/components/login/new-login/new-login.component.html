@@ -1,20 +1,22 @@
 <div class="rtl">
   <h2>כניסה</h2>
+  <div style="width:30%;">
   <div class="container">
+
     <form class="form" #formNewperson="ngForm" (ngSubmit)="saveForm()">
 
     <div class="form-group"  >
         <label for="personEmail">מייל</label>
       <input nbInput  class="ltr" type="text" name="email" [(ngModel)]="newperson.email" class="form-control" placeholder="מייל" #personEmail="ngModel" required email  [ngClass]="{ 'is-invalid': personEmail.invalid && (personEmail.dirty || personEmail.touched) }">
       <div class="alert-danger" *ngIf="personEmail.invalid && (personEmail.dirty || personEmail.touched)" >
-          <nb-alert  size="tiny" status="danger" *ngIf="personEmail.errors.email">
+          <!-- <nb-alert  size="tiny" status="danger" *ngIf="personEmail.errors.email">
               זה המייל שלך? לא יכול להיות!
-            </nb-alert>
-            <nb-alert status="danger" *ngIf="personEmail.errors.email">
+            </nb-alert> -->
+            <!-- <nb-alert status="danger" *ngIf="personEmail.errors.email">
                אין לך מייל?
-              </nb-alert>
-          <!-- <div class="alert-danger" *ngIf="personEmail.errors.required">חובה להכניס כתובת מייל</div> -->
-          <!-- <div class="alert-danger" *ngIf="personEmail.errors.email">כתובת מייל חייבת להיות תקנית</div> -->
+              </nb-alert> -->
+          <div class="alert-danger" *ngIf="personEmail.errors.required">חובה להכניס כתובת מייל</div>
+          <div class="alert-danger" *ngIf="personEmail.errors.email">כתובת מייל חייבת להיות תקנית</div>
     </div>
   </div>
 
@@ -23,6 +25,8 @@
         <label for="personPassword">סיסמא</label>
       <input type="password" name="password" [(ngModel)]="newperson.password" class="form-control"  placeholder="סיסמא" #personPassword="ngModel" required minlength="6" [ngClass]="{ 'is-invalid': personPassword.invalid && (personPassword.dirty || personPassword.touched) }" >
       <div *ngIf="personPassword.invalid && (personPassword.dirty ||personPassword.touched)">
+          
+        
       <div class="alert-danger" *ngIf="personPassword.errors.required">חובה להכניס סיסמא</div>
       <!-- <div class="alert-danger"*ngIf="personPassword.errors.pattern">הסיסמא חייבת להכיל אותיות ומספרים </div> -->
       <div class="alert-danger" *ngIf="personPassword.errors.minlength">הסיסמא חייבת להכיל לפחות ששה תוים</div>
@@ -35,10 +39,13 @@
 
         </div>
 <div *ngIf="goRegister">
-  <h5>אינך רשום במערכת. יתכן שהכנסת פרט שגוי.</h5>
+  <nb-card>
+  <h5 >אינך רשום במערכת. יתכן שהכנסת פרט שגוי.</h5>
   <h6>אם ברצונך להרשם כעת הקש על "הרשמה "</h6>
   <button nbButton type="button" class="btn btn-success" (click)="register()" >הרשמה</button>
+</nb-card>
 </div>
+
 <div >
 
 
@@ -47,7 +54,7 @@
     </form>
   </div>
 
-
+</div>
 
 
 
