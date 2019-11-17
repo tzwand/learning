@@ -12,14 +12,15 @@
 <!-- <br> -->
 <h5>חלוקה מאחורי הקלעים לפי ניקוד בטבלת ספר</h5>
 <nb-checkbox type="checkbox" id="sos" (change)="sos=!sos"></nb-checkbox>
-<!-- <input type="checkbox" id="sos" (change)="sos=!sos"><br> -->
+
     <div *ngIf="sos" >
       <h4>הסכום שאתה מציע לזמן קריטי</h4>
-      <!-- <br> -->
-      <input  nbInput type="number" [(ngModel)]="req.donor.sosSum" type="text" id="sosSum" /><br>
+      <!-- ng model to donor's sum -->
+      <input  nbInput type="number" [(ngModel)]="req.request.sosPayment" type="text" id="sosSum" /><br>
       <h4>התאריך הקריטי מבחינתך  </h4>
+
       <input [nbDatepicker]="datepicker">
-      <nb-datepicker #datepicker></nb-datepicker>
+      <nb-datepicker #datepicker (dateChange)=dateChosen($event)></nb-datepicker>
       <!-- <input type="datetime"  [(ngModel)]="req.donor.sosDate"  id="sosDate"/><br> -->
     </div>
 <!-- <button (click)="next()">הבא</button><br> -->

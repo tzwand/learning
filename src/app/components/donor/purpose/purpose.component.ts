@@ -13,32 +13,39 @@ export class PurposeComponent implements OnDestroy, OnInit {
 email : string
 userName: string
 donor:donor
-purpose:string[]
+purpose=""
 purposeDesc:string
 purposeList=[" "," "]
   constructor( private route: ActivatedRoute,
     private router: Router ,private req:RequestService) { }
 
   ngOnInit() {
+    //display user info
     this.req.donor.email=sessionStorage.getItem('userEmail');
     this.req.donor.name=sessionStorage.getItem('donorName');
     this.email=this.req.donor.email;
     this.userName=this.req.donor.name;
-    this.purpose=[" "," "];
+    //fill the multi select with info
     this.purposeList = this.req.getPurposes()
   }
   //פונקציה זו מתרחשת ברגע בו הקומפוננטה יורדת
   ngOnDestroy(): void {
-   this.req.donor.reqPurpose=this.purpose+this.purposeDesc//מעדכן את הסרויס במטרה שהתורם מכניס כעת
+    //the purposes + extra info
+   this.req.request.reqPurpose=this.purpose+' '+ this.purposeDesc//מעדכן את הסרויס במטרה שהתורם מכניס כעת
+   console.log(this.req.request)
   }
   onMenuItemSelected(event){
+    this.purpose=""
     //event -- string array of selected items
-    console.log(event);
     for(let i=0;i<event.length;i++){
-      console.log(event[i]);
+      // all the purposes for req are added
+      if(i!=0)
+      this.purpose+=', ';
+      this.purpose+= event[i];
     }
   }
-next(){
-  this.router.navigate(['/payments']);
+  next(){
+  this.req.request.reqPurpose=this.purpose+' '+ this.purposeDesc
+  // this.router.navigate(['/payments']);
 }
 }

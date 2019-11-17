@@ -25,7 +25,9 @@ this.req.getRegularSum().subscribe(success=>{this.sum=success },err=>{console.er
 // this.sosSum=0;
 // this.sos= false;
   }
- 
+  dateChosen(event){
+this.req.request.sosDate=event;
+  }
 
 next(){
   this.router.navigate(['/time']);

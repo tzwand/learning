@@ -33,8 +33,9 @@ export class FinalScreenComponent implements OnInit {
   }
   ngOnInit() {
     this.donor = this.req.donor   //הפרטים של הבקשה בעצמה-מגיע מהתורם שבסרויס
+    
     this.req.getOccuptions()//מקבלים ישר מהסרויס רשימת זמנים
-
+console.log(this.req.request)
   }
   // next() {
   //   this.req.sendReq(this.donor)

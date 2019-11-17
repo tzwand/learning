@@ -4,7 +4,7 @@
 <br>
 
 <div *ngIf="req.times!=null">
-<nb-select multiple status="primary" placeholder="בחר..." filled="false" name="multiselect" (selectedChange)="onMenuItemSelected($event)">
+<nb-select status="primary" placeholder="בחר..." filled="false" name="multiselect" (selectedChange)="onMenuItemSelected($event)">
   <nb-option-group  title="בחר...">
   <nb-option *ngFor="let t of req.times" value="{{t.timeDesc}}">{{t.timeDesc}}</nb-option>
 </nb-option-group>
@@ -28,9 +28,13 @@ placeholder="Form Picker"
 <br> -->
 
 <h4>הגדר תאריך אחרון להרשמה</h4>
+<!-- add validater -->
 <input [nbDatepicker]="datepicker">
-<nb-datepicker #datepicker></nb-datepicker>
+
+<nb-datepicker #datepicker 
+  (dateChange)=lastDateChosen($event) ></nb-datepicker>
+  <!-- <nb-datepicker  #datepicker [(ngModel)]="req.request.registerEndDate"></nb-datepicker>  -->
 <!-- <input [nbDatepicker]="datepicker" [formControl]="endDateFormControl" >
-<nb-datepicker name="endDate" #datepicker [(ngModel)]="req.registerEndDate"></nb-datepicker> -->
+  maxValidator()
 <br>
-<!-- <button (click)="next()">הבא</button> -->
+ <button (click)="next()">הבא</button> -->

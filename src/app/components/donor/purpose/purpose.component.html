@@ -1,16 +1,16 @@
 <div class="container">
-  <form class="form" #formNewperson="ngForm" (ngSubmit)="saveForm()">
+  <!-- <form class="form" #formNewperson="ngForm" (ngSubmit)="saveForm()"> -->
 
 <br>
 <div class="form-group"  >
 <h4> פרטים אישיים</h4>
 <br>
 <label class="text-success">  שם משתמש</label>
-<!-- <br> -->
+<br>
 <label >{{userName}}</label>
 <br>
 <label class="text-success">  מייל</label><label >   </label>
-<!-- <br> -->
+<br>
 <label>{{email}}</label>
 <br>
 </div>
@@ -36,8 +36,8 @@
 <br/>
 <label> פירוט הבקשה</label>
 <br>
-<textarea nbInput type ="text" id="purpose" name="textArea" [(ngModel)]="purposeDesc" ></textarea>
-<!-- <button (click)="next()">הבא</button> -->
+<textarea (focusout)="next()" nbInput type ="text" id="purpose" name="textArea" [(ngModel)]="purposeDesc" ></textarea>
+<!-- <button nbButton  (click)="next()">שמור</button> -->
 </div>
-</form>
+<!-- </form> -->
 </div>

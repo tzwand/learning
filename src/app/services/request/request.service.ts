@@ -13,12 +13,9 @@ import { offer } from 'src/app/classes/offer';
   providedIn: 'root'
 })
 export class RequestService {
-
-
-
-
   times=null;
   donor: donor;
+  request: offer;
   donorbook: book;
   occupations: Array<occupation>;
   purposes: Array<string>;
@@ -35,9 +32,7 @@ export class RequestService {
     this.donor.reqPurpose = 'להצלחת הפרויקט במהירות'
     this.donor.reqStartDate = new Date('02/09/2019');
     this.donor.sosDate = null;
-  
-
-
+    this.request= new offer()
   }
   getTimes() {
     if (this.times == null) {
@@ -69,7 +64,7 @@ export class RequestService {
 
 
 sendReq(): void {
-    this.http.post<boolean>(environment.BASIC_URL + 'api/forRequest/addRequest', this.donor);
+    this.http.post<boolean>(environment.BASIC_URL + 'api/forRequest/addRequest', this.request);
   };
 
 getLearnersForRequest(reqId:number):Observable<Array<learner>>

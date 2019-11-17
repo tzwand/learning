@@ -2,41 +2,41 @@
 <br>
 <h4 class="text-primary">פרטים אישיים</h4>
 <!-- <br> -->
-<label>שם משתמש</label>
-<!-- <br> -->
-<label>{{userName}}</label>
-<!-- <br> -->
-<label>מייל</label>
-<!-- <br> -->
-<label>{{email}}</label>
+<label class="text-success">  שם משתמש</label>
+<br>
+<label>{{req.donor.name}}</label>
+<br>
+<label class="text-success">  מייל</label>
+<br>
+<label>{{req.donor.email}}</label>
 <br>
 <h4 class="text-primary">מטרת הבקשה</h4>
 <!-- <br> -->
-<label> {{purpose}}</label>
+<label> {{req.request.reqPurpose}}</label>
 <br>
 <!-- <br> -->
 <h4 class="text-primary"> טווח זמן</h4>
 <!-- <br> -->
-<label>{{timeType}}</label>
+<label>{{req.request.timeDesc}}</label>
 <!-- <br> -->
 
 <!-- <br> -->
 <h5>החל מ:</h5>
 <!-- <br> -->
-<label>{{startDate|date}}</label>
+<label>{{req.request.reqStartDate|date}}</label>
 <!-- <br> -->
 <h5>עד:</h5>
 <!-- <br> -->
-<label>{{endDate|date}}</label>
+<label>{{req.request.reqEndDate|date}}</label>
 <!-- <br>
 <br> -->
 <h4 class="text-primary">סה"כ  הסכום לתשלום</h4>
 <!-- <br> -->
-<label>{{maxPrice}}</label>
+<label>{{req.request.payment}}</label>
 <!-- <br> -->
 <h5>מתוכו סכום המוגדר רק עבור זמן קריטי:</h5>
 <!-- <br> -->
-<label>{{sosPrice}}</label>
+<label>{{req.request.sosPayment}}</label>
 <!-- <br>
 <br> -->
 <h4 class="text-primary">הקבוצות שהגדרת מתוך לומדי המערכת שלנו:</h4>
@@ -50,11 +50,5 @@
 <br>
 <nb-checkbox></nb-checkbox>
 <h4 class="text-warning">אני מסכים לכללי המערכת</h4>
-
-
-
-
-
-
 <a href="#" >לקריאה</a>
 <button nbButton class=" btn btn-success" (click)="next()">אישור</button>
