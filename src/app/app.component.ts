@@ -30,16 +30,19 @@ export class AppComponent implements OnInit {
 
   items = [{ title: 'פרופיל', link: '/profile' },
   { title: 'יציאה', link: '/login/1' }];
-  items2= [
+
+   items2= [
     {
       title: 'עמוד הבית',
-      link: sessionStorage.getItem('userType')+'/dashboard'
+     link: `${sessionStorage.getItem('userType') =='learner'? 'learner':'donor'}/dashboard`
+      // link: sessionStorage.getItem('userType') =='learner'? 'learner/dashboard':'donor/dashboard'
     },
     {
       title: 'יציאה',
       link: '/'
     }
    ];
+ 
   data1: person[]
   settings = {
     actions: {
