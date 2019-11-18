@@ -31,8 +31,11 @@ export class UserService {
   addDonor(name: string,email:string): Observable<Array<person>> {
     return this.http.post<Array<person>>(environment.BASIC_URL + "api/user/addDonor", [name,email]);
   }
-  resetPassword(type:string,email:string, startMonth:string,startYear:string): Observable<Array<person>> {
-    return this.http.post<Array<person>>(environment.BASIC_URL + "api/user/resetPassword", [type,email,startMonth,startYear]);
+  resetPassword(type:string,email:string, startMonth:string,startYear:string): Observable<string>{
+    return this.http.post<string>(environment.BASIC_URL + "api/user/resetPasswordPost", [type,email,startMonth,startYear]);
+  }
+  resetPasswordByEmail(type:string,email:string): Observable<string>{
+    return this.http.post<string>(environment.BASIC_URL + "api/user/resetPasswordPostByEmail", [type,email]);
   }
 
   deleteperson(p: person): Observable<Array<person>> {

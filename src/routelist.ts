@@ -28,7 +28,7 @@ export const appNavigations = [
    { path: '',  redirectTo: "/", pathMatch:'full'},
   // { path: '', component: AppComponent, canActivate: [AuthGuard] },
   { path: 'login/:type', component: NewLoginComponent },
-  { path: 'resetPassword', component: ResetPasswordComponent },
+  { path: 'resetPassword/:type', component: ResetPasswordComponent },
   { path: 'register/:type', component: NewRegisterComponent },
   { path: 'learner', component: LearnerScreenComponent,
     // children: [

@@ -62,7 +62,7 @@ export class NewLoginComponent implements OnInit {
   }
   resetPassword() {
 
-    this.router.navigate(['/resetPassword/']);
+    this.router.navigate(['/resetPassword/'+this.type]);
       }
   register() {
     this.router.navigate(['/register/' + this.type]);
