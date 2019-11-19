@@ -13,11 +13,12 @@ export class LearnerDetailsComponent implements OnInit {
   constructor( private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit() {
-    // this.route.params
-    // .subscribe((paramsFromUrl: Params) => {
-    //   console.log('paramsFromUrl!!!', paramsFromUrl);
-    //   this.learner = paramsFromUrl.learner;
-    // });
+   
+    
+  }
+  //which level should do? here it is bite size, but i dont have the book's details? i have them in the fathers
+  deleteMatch(){
+    
   }
 
 }

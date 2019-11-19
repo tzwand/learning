@@ -12,6 +12,7 @@ import { book } from 'src/app/classes/book';
 })
 export class AddLearningService {
   addedBookToLearn:offer;
+  allMatching:matching[];
  l= new learner("hh@gmail.com","111111",1,"")
   // [x: string]: any;
   constructor(private http: HttpClient) {
@@ -23,5 +24,15 @@ export class AddLearningService {
   addLearning(m:matching):Observable<string>
   {
     return this.http.post<string>(environment.BASIC_URL+"api/learner/addLearningPost",m)
+  }
+  removeMatch(m:matching):Observable<string>
+  {
+    return this.http.delete<string>(environment.BASIC_URL+"api/matching/deleteMatch"+m)
+  }
+  getAllMatchings(){
+    return this.http.get<Array<matching>>(environment.BASIC_URL+"api/matching/getAllMatchings").subscribe(success => { this.allMatching = success; }, error => { console.log(error); });
+  }
+  deleteMatchByDonorLearnerAndBook(donorId:string,learnerId:number,bookId:number):Observable<matching>{
+    return this.http.get<matching>(environment.BASIC_URL+"api/matching/getMatchByDonorLearnerAndBook"+'/'+donorId+'/'+learnerId+'/'+bookId)
   }
 }
