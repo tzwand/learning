@@ -1,0 +1,6 @@
+<!-- <p-fileUpload name="myfile[]" url="http://localhost:62299/api/forRequest/addUpload" multiple="multiple" accept=".xlsx" [auto]="true" (onUpload)="loadDocument($event)" #LoadDocument
+></p-fileUpload> -->
+<label for="LoadDocument" class="browse">browse</label>
+<input type="file" (change)="readURL($event)" name="LoadDocument" #LoadDocument />
+
+<button (click)="saveFile()" >zxxxxxxxxxx</button>

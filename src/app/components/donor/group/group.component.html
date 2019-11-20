@@ -7,6 +7,7 @@
 <h5>כדי להכניס רשימה מוכנה דרך אקסל לחץ כאן</h5>
   <p-fileUpload name="myfile[]" url="http://localhost:62299/api/forRequest/addUpload" multiple="multiple" accept=".xlsx" [auto]="true" (onUpload)="onUpload($event)"
   ></p-fileUpload>
+  <app-excel></app-excel>
   <button nbButton status="success">שמור</button>
   <button nbButton>להגדרת קבוצה נוספת</button>
 </nb-card>
