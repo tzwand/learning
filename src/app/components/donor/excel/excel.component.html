@@ -1,0 +1,14 @@
+<!-- <p-fileUpload name="myfile[]" url="http://localhost:62299/api/forRequest/addUpload" multiple="multiple" accept=".xlsx" [auto]="true" (onUpload)="loadDocument($event)" #LoadDocument
+></p-fileUpload> -->
+<h4 class="text-success">הורד קובץ אקסל ריק מכאן</h4>
+
+<button nbButton (click)="downloadFile('OtzarHalimud')" > הורד קובץ </button>
+<h4 class="text-success">מלא את פרטי הלומדים הפוטנצינלים</h4>
+
+<label for="LoadDocument" class="browse">
+  <h4 class="text-success">
+  העלה את הקובץ המעודכן</h4></label>
+<br>
+<input type="file" (change)="readURL($event)" name="LoadDocument" #LoadDocument />
+
+<button nbButton (click)="saveFile()" >שלח קובץ</button>

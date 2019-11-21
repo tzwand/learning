@@ -57,6 +57,8 @@ import { LearnerDetailsComponent } from './components/donor/dashboard/learner-de
 import { DashboardLearnersComponent } from './components/donor/dashboard/dashboard-learners/dashboard-learners.component';
 import { DashboardBooksComponent } from './components/donor/dashboard/dashboard-books/dashboard-books.component';
 import { LearnerEventDetailsComponent } from './components/learner/learner-event-details/learner-event-details.component';
+import { ExcelComponent } from './components/donor/excel/excel.component';
+import { ExcelFilesService } from './services/excelFiles/excel-files.service';
 
 
 @NgModule({
@@ -78,7 +80,7 @@ import { LearnerEventDetailsComponent } from './components/learner/learner-event
     NewRegisterComponent,
     FinalScreenComponent,
     NewLoginComponent, BookComponent, CalenderComponent, LearnerDashboardComponent,
-     StepCardComponent, ResetPasswordComponent, GroupsSettingsComponent,DonorDashboardComponent,ConfirmLearningComponent, LearenrsPerBookComponent, BooksForLearnerComponent, DashboardRequestsComponent, LearnerDetailsComponent, DashboardLearnersComponent, DashboardBooksComponent, LearnerEventDetailsComponent
+     StepCardComponent, ResetPasswordComponent, GroupsSettingsComponent,DonorDashboardComponent,ConfirmLearningComponent, LearenrsPerBookComponent, BooksForLearnerComponent, DashboardRequestsComponent, LearnerDetailsComponent, DashboardLearnersComponent, DashboardBooksComponent, LearnerEventDetailsComponent, ExcelComponent
 
   ],
   imports: [
@@ -102,7 +104,7 @@ import { LearnerEventDetailsComponent } from './components/learner/learner-event
     // AlertService,
     // AuthenticationService,
     NbSidebarService, CalendarServiceService,BookService,
-    UserService, NbMenuService, NbMenuInternalService,NbDialogService,
+    UserService, NbMenuService, NbMenuInternalService,NbDialogService,ExcelFilesService,
     // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
