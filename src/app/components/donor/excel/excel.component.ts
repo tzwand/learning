@@ -126,11 +126,33 @@ private convertData(data, isPost) {
 let y:string=sessionStorage.getItem("mybase64File")
  
 let j=  sessionStorage.getItem("fileNeme") 
+let userName= sessionStorage.getItem("donorName")
 let d1:base64=new base64();
 d1.base64=y;
-this.fileService.saveExcelFile(j,d1).subscribe((p)=>{alert("kkkkk");});
+this.fileService.saveExcelFile(j,userName,d1).subscribe((p)=>{alert("ברוך ה הצליח !");});
 
  }
+//  downloadFile(){
+//    this.fileService.downloadExcel();
+//  }
+ downloadFile(fileName: string) {
+  this.fileService.postAndGetResponse(fileName).subscribe(fileData => {
+
+    const blob: any = new Blob([fileData], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+
+    let link = document.createElement("a");
+
+    if (link.download !== undefined) {
+      let url = URL.createObjectURL(blob);
+      link.setAttribute("href", url);
+      link.setAttribute("download", fileName);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  }
+  );
+}
  readURL(input) {
 
   
