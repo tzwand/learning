@@ -23,9 +23,9 @@
   </nb-option-group>
 </nb-select> -->
 
-<nb-select multiple status="primary" placeholder="בחר..." filled="false" name="multiselect" (selectedChange)="onMenuItemSelected($event)">
-  <nb-option-group  title="בחר...">
-  <nb-option *ngFor="let p of purposeList" value="{{p}}" name="option">{{p}}</nb-option>
+<nb-select  multiple status="primary" placeholder="בחר..." filled="false" name="multiselect" (selectedChange)="onMenuItemSelected($event)">
+  <nb-option-group  style="background-color:white" title="בחר...">
+  <nb-option class="options" style="background-color:white" *ngFor="let p of purposeList" value="{{p}}" name="option">{{p}}</nb-option>
 </nb-option-group>
 </nb-select>
 
