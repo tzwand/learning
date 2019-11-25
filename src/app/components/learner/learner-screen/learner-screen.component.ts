@@ -157,10 +157,7 @@ this.data= new Array<any>()
     //    this.id = paramsFromUrl.id;
     //    this.name = paramsFromUrl.name;
     // });
-    this.cards = ["hello", "how ", "are", "you", "today"]
-    this.addService.getCurrentRequests().subscribe(success => {  this.offers = (success),this.onSuccess()} )
-
-
+    this.addService.getCurrentRequests(sessionStorage.getItem('learnerId') as unknown as number).subscribe(success => {  this.offers = (success),this.onSuccess()} )
   }
 
   onSuccess(){

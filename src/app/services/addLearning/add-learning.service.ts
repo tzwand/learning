@@ -18,8 +18,8 @@ export class AddLearningService {
   constructor(private http: HttpClient) {
     sessionStorage.setItem("currentLearner","7")
   }
-  getCurrentRequests(): Observable<Array<offer>> {
-    return this.http.get<Array<offer>>(environment.BASIC_URL + "api/learner/getCurrentRequests")
+  getCurrentRequests(learnerId:number): Observable<Array<offer>> {
+    return this.http.post<Array<offer>>(environment.BASIC_URL + "api/learner/PostCurrentRequestsPerLearner",learnerId as unknown as object)
   }
   addLearning(m:matching):Observable<string>
   {
