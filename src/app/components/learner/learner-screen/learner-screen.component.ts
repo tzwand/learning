@@ -52,8 +52,11 @@ export class LearnerScreenComponent implements OnInit {
     reqId: {
       title: 'קוד בקשה'
     },
+    donorName: {
+      title: 'שם היזם ',
+    },
     BookId: {
-      title: 'שם הספר'
+      title: 'קוד הספר'
     },
         BookName: {
           title: 'שם הספר'
@@ -66,6 +69,9 @@ export class LearnerScreenComponent implements OnInit {
         },
         reqEndDate: {
           title: 'תאריך סיום',
+        },
+        registerEndDate: {
+          title: 'תאריך סיום הרשמה',
         },
         timeDesc: {
           title: 'תדירות'
@@ -163,21 +169,30 @@ this.data= new Array<any>()
   onSuccess(){
     console.log("BookName:"+ this.offers[0].reqPurpose +"extraInfo:"+ this.offers[0].extraInfo)
     for (let i = 0; i < this.offers.length; i++) {
-
+//gender and ocuupation id not a must becaue it is filtered to start with, obvieslt we dont show donor email and password...
       this.data.push
         ({
+        
           reqId:this.offers[i].reqId,
+          donorName:this.offers[i].reqId,
           BookId:this.offers[i].BookId,
-          BookName: this.offers[i].BookName, extraInfo: this.offers[i].extraInfo,
-          reqStartDate: this.offers[i].reqStartDate, reqEndDate: this.offers[i].reqEndDate,
-          timeDesc: this.offers[i].timeDesc, payment: this.offers[i].payment,
-          reqPurpose: this.offers[i].reqPurpose
+          BookName: this.offers[i].BookName,
+          reqPurpose: this.offers[i].reqPurpose,
+           extraInfo: this.offers[i].extraInfo,
+
+           reqStartDate: this.offers[i].reqStartDate, 
+           registerEndDate:this.offers[i].registerEndDate,
+          reqEndDate: this.offers[i].reqEndDate,
+          timeDesc: this.offers[i].timeDesc,
+           payment: this.offers[i].payment
         });
         this.show=true
     }
   }
   onDeleteConfirm(event) {
     //alert("onDeleteConfirm");
+
+    //the offer from the table to show and confirm
     this.addService.addedBookToLearn=event.data;
     console.log(event.data)
     console.log(sessionStorage["getItem(currentLearner)"])
