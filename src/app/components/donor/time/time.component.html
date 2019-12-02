@@ -1,21 +1,21 @@
 
 <!-- <br> -->
-<h4>הגדר סוג טווח זמן</h4>
-<br>
+<h4>הגדר סוג טווח זמן:</h4>
 
-<div *ngIf="req.times!=null">
+
+<div *ngIf="req.times != null">
 <nb-select status="primary" placeholder="בחר..." filled="false" name="multiselect" (selectedChange)="onMenuItemSelected($event)">
-  <nb-option-group  title="בחר...">
-  <nb-option *ngFor="let t of req.times" value="{{t.timeDesc}}">{{t.timeDesc}}</nb-option>
+  <nb-option-group  title="בחר..." style="background-color:white" >
+  <nb-option style="background-color:white"  *ngFor="let t of req.times" value="{{t.timeDesc}}">{{t.timeDesc}}</nb-option>
 </nb-option-group>
 </nb-select>
 </div>
 <br>
-<!-- <select id="time" name="select"><br>
+<!-- <select id="time" jname="select"><br>
   <option *ngFor="let t of times" name="timeDesc">{{t.timeDesc}}</option>
 </select> -->
 <h4>הגדר טווח זמן: </h4>
-<br>
+
 <input nbInput
 fullWidth
 placeholder="Form Picker"

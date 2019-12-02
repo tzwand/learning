@@ -59,6 +59,6 @@ console.log(event);
 onMenuItemSelected(event){
   //event -- string  of selected item
   console.log(event);
- this.req.request.timeId=event;
+ this.req.request.timeDesc=event;
 }
 }

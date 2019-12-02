@@ -51,13 +51,24 @@ export class GroupComponent implements OnInit {
   mychange(num) {
      if (num == 0)
      if(this.viewOccupations.find(x=>x.gender=="male")==undefined)
+     {
       this.viewOccupations = this.viewOccupations.concat(this.occupations.filter(v => v.gender == "male"))
+      this.req.request.genderId="0";
+     }
       if(this.viewOccupations.find(x=>x.gender=="female")==undefined)
+      
       if (num == 1)
+      {
       this.viewOccupations = this.viewOccupations.concat(this.occupations.filter(v => v.gender == "female"))
+      this.req.request.genderId="1";
+      }
       if((this.viewOccupations.find(x=>x.gender=="male")==undefined)||(this.viewOccupations.find(x=>x.gender=="female")==undefined))
+      
       if (num == 2)
+      {
       this.viewOccupations = this.occupations
+      this.req.request.genderId="2";
+      }
   }
 
 

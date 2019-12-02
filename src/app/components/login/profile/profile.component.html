@@ -1,0 +1,9 @@
+<div class="rtl">
+<nb-card>
+  <h2 class="text-success">עדכון פרטי משתמש </h2>
+  שם <input nbInput type="text" [(ngModel)]="userName" />
+      מייל<input  nbInput type="text" [(ngModel)]="userEmail" />
+      סיסמא<input  nbInput type="text" [(ngModel)]="userPassword" />
+      <button nbButton (click)="saveChanges()">שמור</button>
+</nb-card>
+</div>

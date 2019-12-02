@@ -2,7 +2,8 @@ import { LoginComponent } from "./app/register/register/login/login.component";
 import { LearnerScreenComponent } from "./app/components/learner/learner-screen/learner-screen.component";
 import { DonorScreenComponent } from "./app/components/donor/donor-screen/donor-screen.component";
 import { Component } from "@angular/core";
-import { ProfileComponent } from "./app/register/register/profile/profile.component";
+
+
 import { RegisterComponent } from "./app/register/register/register";
 import { HomeComponent } from "./app/register/register/home";
 // import { AuthGuard } from "./app/register/_guards";
@@ -22,6 +23,7 @@ import { DashboardBooksComponent } from './app/components/donor/dashboard/dashbo
 import { DashboardLearnersComponent } from './app/components/donor/dashboard/dashboard-learners/dashboard-learners.component';
 import { DashboardRequestsComponent } from './app/components/donor/dashboard/dashboard-requests/dashboard-requests.component';
 import { LearnerDetailsComponent } from './app/components/donor/dashboard/learner-details/learner-details.component';
+import { ProfileComponent } from './app/components/login/profile/profile.component';
 
 export const appNavigations = [
 
@@ -62,6 +64,7 @@ children:[
   
   // { path: 'profile', component: ProfileComponent },
   { path: 'app', component: AppComponent },
+  { path: 'profile', component: ProfileComponent },
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
 

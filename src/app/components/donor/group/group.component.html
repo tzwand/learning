@@ -56,8 +56,8 @@
   </nb-select> -->
 
   <nb-select multiple status="primary" placeholder="בחר..." filled="false" name="multiselect" (selectedChange)="onMenuItemSelected($event)">
-    <nb-option-group  title="בחר...">
-    <nb-option *ngFor="let occuption of viewOccupations" value="occuption.occupationName">{{occuption.occupationName}}</nb-option>
+    <nb-option-group  title="בחר..." style="background-color:white" >
+    <nb-option style="background-color:white"  *ngFor="let occuption of viewOccupations" value="occuption.occupationName">{{occuption.occupationName}}</nb-option>
   </nb-option-group>
   </nb-select>
   <!-- <nb-select multiple status="primary" placeholder="בחר..." filled="false" [(ngModel)]="chosenTest" >

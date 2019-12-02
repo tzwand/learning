@@ -16,6 +16,11 @@
 {{this.offer.BookName}}
 <br>
 <h4 class="text-success">
+<i class="nb-person"></i> שם היזם  </h4>
+{{this.offer.donorName}}
+<br>
+
+<h4 class="text-success">
 <i class="nb-person"></i> מטרת הבקשה   </h4>
 {{this.offer.reqPurpose}}
 <br>
@@ -27,6 +32,10 @@
     <i class="nb-person"></i> תדירות </h4>
     {{this.offer.timeDesc}}
 <br>
+<h4 class="text-success"> 
+    <i class="nb-person"></i> סכום המילגה </h4>
+    {{this.offer.payment}}
+<br>
 
 <h4 class="text-success"> 
          <i class="nb-person"></i> תאריך התחלה</h4>
@@ -35,6 +44,11 @@
     <h4 class="text-success">
         <i class="nb-person"></i>תאריך סיום</h4>
         {{this.offer.reqStartDate}}
+    <br>
+      <h4 class="text-success">
+        <i class="nb-person"></i>    תאריך סיום הרשמה </h4>
+        {{this.offer.registerEndDate}}
+    <br>}}
     <br>
     <br>
 <button nbButton (click)="submit(true)">להצטרפות</button>
