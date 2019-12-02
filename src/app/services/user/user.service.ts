@@ -45,5 +45,11 @@ export class UserService {
   updateperson(p: person) {
     return this.http.put<Array<person>>(environment.BASIC_URL + "Put", p);
   }
+  updateLearner(l: learner) {
+    return this.http.put<Array<person>>(environment.BASIC_URL + "api/user/PutLearner", l);
+  }
+  updateDonor(d: donor) {
+    return this.http.put<Array<person>>(environment.BASIC_URL + "api/user/PutDonor", d);
+  }
 
 }

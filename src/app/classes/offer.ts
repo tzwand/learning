@@ -24,6 +24,27 @@ export class offer{
       public sosPayment?:number, //from payments boolean
       public timeDesc?:string, //from time comp
       public timeId?:number //generate from select
+
+      /*
+            public int reqId { get; set; }
+        public string donorName { get; set; }
+        public string donorEmail { get; set; }
+        public string reqPurpose { get; set; }
+        public int BookId { get; set; }
+        public string BookName { get; set; }
+        public int?   timeId { get; set; }
+        public string timeDesc { get; set; }
+        public DateTime? reqStartDate { get; set; }
+        public DateTime? registerEndDate { get; set; }
+
+        public DateTime? reqEndDate { get; set; }
+        public DateTime? sosDate { get; set; }
+        public Nullable<double> payment { get; set; }
+        public Nullable<double> sosPayment { get; set; }
+        public Nullable<int> occuptionId { get; set; }
+        public string genderid { get; set; }
+        public string password { get; set; }
+        public string extraInfo { get; set; }*/
       ){}
 }
 

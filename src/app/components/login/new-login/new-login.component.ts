@@ -32,7 +32,7 @@ export class NewLoginComponent implements OnInit {
   saveForm() {
     debugger
     sessionStorage.setItem('userEmail', this.newperson.email);
-
+    sessionStorage.setItem('userPassword', this.newperson.password);
     // this.temp = "";
     if (this.type == 1) {
     sessionStorage.setItem('userType', 'donor');

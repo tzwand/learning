@@ -59,6 +59,7 @@ import { DashboardBooksComponent } from './components/donor/dashboard/dashboard-
 import { LearnerEventDetailsComponent } from './components/learner/learner-event-details/learner-event-details.component';
 import { ExcelComponent } from './components/donor/excel/excel.component';
 import { ExcelFilesService } from './services/excelFiles/excel-files.service';
+import { ProfileComponent } from './components/login/profile/profile.component';
 
 
 @NgModule({
@@ -80,7 +81,7 @@ import { ExcelFilesService } from './services/excelFiles/excel-files.service';
     NewRegisterComponent,
     FinalScreenComponent,
     NewLoginComponent, BookComponent, CalenderComponent, LearnerDashboardComponent,
-     StepCardComponent, ResetPasswordComponent, GroupsSettingsComponent,DonorDashboardComponent,ConfirmLearningComponent, LearenrsPerBookComponent, BooksForLearnerComponent, DashboardRequestsComponent, LearnerDetailsComponent, DashboardLearnersComponent, DashboardBooksComponent, LearnerEventDetailsComponent, ExcelComponent
+     StepCardComponent, ResetPasswordComponent, GroupsSettingsComponent,DonorDashboardComponent,ConfirmLearningComponent, LearenrsPerBookComponent, BooksForLearnerComponent, DashboardRequestsComponent, LearnerDetailsComponent, DashboardLearnersComponent, DashboardBooksComponent, LearnerEventDetailsComponent, ExcelComponent, ProfileComponent
 
   ],
   imports: [
