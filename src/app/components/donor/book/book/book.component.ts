@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { book } from '../../../../classes/book';
 import { RequestService } from '../../../../services/request/request.service';
 import { delay } from 'rxjs/operators';
@@ -14,6 +14,7 @@ import { BookService } from 'src/app/services/book/book.service';
   styleUrls: ['./book.component.css']
 })
 export class BookComponent implements OnInit {
+  @Output() continue = new EventEmitter();
   bookListFromServerCopy: book[];
   constructor(private req: RequestService,private bookService:BookService) { }
 myList;
@@ -62,22 +63,9 @@ this.bookListFromServerCopy=[];
 //fills rhe service's properties with data
 this.bookService.getBooks();
 
-// this.req.getBooksAny().subscribe(
-//   success => {
-//     // get data- books from server
-//      console.log(success),
 
-//      this.bookListFromServer = success,
 
-//     console.log((this.convert(this.bookListFromServer, true))),
-//    // on success --- this.list is filled with the results of a conversion function
-//     this.list = this.convert(this.bookListFromServer, true),
-//     // for debugging proccess
-//     console.log(JSON.stringify(this.list)),
-//      this.showBookDataTable = true;
 
-//      }
-// );
 
 
   }
@@ -228,6 +216,7 @@ if(this.bookService.bookListFromServer[i].BookId ==bookId){
   this.nodeId=i;
 break;
 }
+
 }
 this.updateParents(this.nodeId);
 this.list = this.convert(this.bookListFromServer, true)
@@ -259,5 +248,16 @@ updateParents(nodeId: number) {
   }
 
 }
+confirmBooks(){
+ let i=0;
+  this.selectedNodes.forEach(node => {
+    this.req.reqBooks[i++]= node.data
+  });
+ console.log(this.req.reqBooks)
+}
 
+next(){
+  this.continue.emit(true);
+ 
+}
 }

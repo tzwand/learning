@@ -1,15 +1,18 @@
 <div class="rtl">
 <!-- <a [routerLink]="['purpose']" class="btn btn-link">לימוד חדש</a> -->
 <!-- <button (click)="newl()">לימוד חדש</button> -->
-<!-- <router-outlet></router-outlet> -->
-<nb-stepper orientation="horizontal">
+<!-- <router-outlet>
+
+
+</router-outlet> -->
+<nb-stepper orientation="horizontal" #stepper disableStepNavigation>
   <nb-step label="פרטים אישיים">
      <nb-card accent="success" card-background-color="#ffffff">
         <nb-card-header>
             <h3 class="text-success">תודה שבחרת באוצר הלימוד  </h3>
       </nb-card-header>
       <nb-card-body>
-        <app-purpose></app-purpose>
+        <app-purpose (continue)="nextStep($event)"></app-purpose>
       </nb-card-body>
       </nb-card>
   </nb-step>
@@ -19,7 +22,7 @@
 
         </nb-card-header>
         <nb-card-body>
-          <app-book></app-book>
+          <app-book (continue)="nextStep($event)"></app-book>
         </nb-card-body>
         </nb-card>
 
@@ -30,21 +33,22 @@
               <h2 class="text-success">תשלום </h2>
         </nb-card-header>
         <nb-card-body>
-          <app-payments></app-payments>
+          <app-payments (continue)="nextStep($event)"></app-payments>
         </nb-card-body>
         </nb-card>
 
     </nb-step>
-    <nb-step label="טווח זמן">
+    <nb-step label="טווח זמן" [stepControl]="form">
+        
+          
         <nb-card accent="success" card-background-color="#ffffff">
             <nb-card-header>
                 <h2 class="text-success">טווח זמן</h2>
           </nb-card-header>
           <nb-card-body>
-            <app-time></app-time>
+            <app-time (continue)="nextStep($event)"></app-time>
           </nb-card-body>
-          </nb-card>
-
+          </nb-card>       
   </nb-step>
 
   <nb-step label="קבוצות לומדים">
@@ -53,7 +57,7 @@
               <h2 class="text-success">קבוצות</h2>
         </nb-card-header>
         <nb-card-body>
-    <app-group></app-group>
+    <app-group (continue)="nextStep($event)"></app-group>
         </nb-card-body>
         </nb-card>
 

@@ -8,10 +8,11 @@
 <input nbInput type="number" id="donorSum" [(ngModel)]="req.donor.sum"/> -->
 <!-- <br><br> -->
 <h5>סה"כ לתשלום:</h5>
-<h4 class="text-success">האם אתה מעונין להציע סכום גבוה יותר בזמן קריטי?</h4>
+<nb-checkbox type="checkbox" id="sos" (change)="sos=!sos"></nb-checkbox>
+<strong class="text-success">אני מעוניין להציע סכום גבוה יותר אם  ההצעה שלי לא תתקבל עד לתאריך שאגדיר.</strong>
 <!-- <br> -->
 <!-- <h5>חלוקה מאחורי הקלעים לפי ניקוד בטבלת ספר</h5> -->
-<nb-checkbox type="checkbox" id="sos" (change)="sos=!sos"></nb-checkbox>
+
 
     <div *ngIf="sos" >
       <h4>הסכום שאתה מציע לזמן קריטי:</h4>
@@ -23,4 +24,4 @@
       <nb-datepicker #datepicker (dateChange)=dateChosen($event)></nb-datepicker>
       <!-- <input type="datetime"  [(ngModel)]="req.donor.sosDate"  id="sosDate"/><br> -->
     </div>
-<!-- <button (click)="next()">הבא</button><br> -->
+    <button nbButton status="success"  (click)="next()"> הבא</button>

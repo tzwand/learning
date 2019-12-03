@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RequestService } from '../../../services/request/request.service';
 
@@ -8,7 +8,7 @@ import { RequestService } from '../../../services/request/request.service';
   styleUrls: ['./payments.component.css']
 })
 export class PaymentsComponent implements OnInit {
- 
+  @Output() continue = new EventEmitter();
 sum:number;
 // sosTime:Date;
 // sosSum:number=0;
@@ -30,6 +30,7 @@ this.req.request.sosDate=event;
   }
 
 next(){
-  this.router.navigate(['/time']);
+  this.continue.emit(true);
+  // this.router.navigate(['/time']);
 }
 }

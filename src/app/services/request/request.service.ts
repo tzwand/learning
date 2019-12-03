@@ -8,6 +8,7 @@ import { donor } from '../../classes/donor';
 import { book } from '../../classes/book';
 import { learner } from 'src/app/classes/learner';
 import { offer } from 'src/app/classes/offer';
+import { sequenceEqual } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class RequestService {
   donorbook: book;
   occupations: Array<occupation>;
   purposes: Array<string>;
+  reqBooks=[];
   // bookListFromServer: book[];
 
   constructor(private http: HttpClient) {
@@ -33,6 +35,7 @@ export class RequestService {
     this.donor.reqStartDate = new Date('02/09/2019');
     this.donor.sosDate = null;
     this.request= new offer()
+    
   }
   getTimes() {
     if (this.times == null) {
@@ -63,9 +66,20 @@ export class RequestService {
   // }
 
 
-sendReq(): void {
-    this.http.post<boolean>(environment.BASIC_URL + 'api/forRequest/addRequest', this.request);
+sendReq(): Observable<any> {
+   return this.http.post<any> (environment.BASIC_URL + 'api/forRequest/addRequest', this.request);
   };
+  createReqs(){
+    debugger
+    this.reqBooks.forEach(book => {
+    
+      this.request.donorEmail=sessionStorage.getItem('donorEmail') ;
+      this.request.password= sessionStorage.getItem("userPassword");
+      this.request.BookId=book.bookId;
+      this.request.BookName=book.BookName;
+      this.sendReq().subscribe(success=>{console.log(success)},error=>{console.log(error)});
+    });
+  }
 
 getLearnersForRequest(reqId:number):Observable<Array<learner>>
 {

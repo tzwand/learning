@@ -42,7 +42,7 @@ console.log(this.req.request)
   //   this.router.navigate(['/donor/2/3']);
   // }
   next() {
-    this.req.sendReq()
+    this.req.createReqs()
     this.router.navigate(['/donor/dashboard']);
   }
 }
