@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { donor } from '../../../classes/donor';
 import { RequestService } from '../../../services/request/request.service';
@@ -9,7 +9,7 @@ import { RequestService } from '../../../services/request/request.service';
   styleUrls: ['./purpose.component.css']
 })
 export class PurposeComponent implements OnDestroy, OnInit {
-
+  @Output() continue = new EventEmitter();
 email : string
 userName: string
 donor:donor
@@ -45,7 +45,11 @@ purposeList=[" "," "]
     }
   }
   next(){
-  this.req.request.reqPurpose=this.purpose+' '+ this.purposeDesc
+  // this.req.request.reqPurpose=this.purpose+' '+ this.purposeDesc
+
   // this.router.navigate(['/payments']);
+  this.continue.emit(true);
+
+  
 }
 }

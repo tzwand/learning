@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RequestService } from '../../../services/request/request.service';
 import { occupation } from '../../../classes/occupation';
@@ -10,6 +10,7 @@ import { occupation } from '../../../classes/occupation';
 })
 
 export class GroupComponent implements OnInit {
+  @Output() continue = new EventEmitter();
   uploadedFiles: any[] = [];
   genders: string[] = ['זכר', 'נקבה', 'לא משנה'];
   constructor(private route: ActivatedRoute,
@@ -20,10 +21,9 @@ export class GroupComponent implements OnInit {
   chosenTest:any;
   viewtest: any[]
   viewOccupations=[];
-  //genders: string[];
+ 
   ngOnInit() {
-    //אמור להגיע מהסרבר
-    //this.genders = ["זכר", "נקבה", "לא משנה"];
+   
   this.req.getOccuptions().subscribe((success)=>{ this.occupations= success;
   }
   )
@@ -31,10 +31,7 @@ export class GroupComponent implements OnInit {
     this.test= [1,2,1,2]
     this.viewtest=["","","",""]
   }
-  next() {
-
-    this.router.navigate(['/finalScreen'])
-  }
+ 
   getOccupations() {
     // this.Occupations = this.req.getOccuptions()
   }
@@ -69,24 +66,22 @@ export class GroupComponent implements OnInit {
       this.viewOccupations = this.occupations
       this.req.request.genderId="2";
       }
+      
   }
 
 
  
 
-//   if (num == 0)
-//       this.viewtest == this.test.filter(v => v==1 )
-// debugger
-//     if ( num ==1)
-//       this.viewtest = this.test.filter(v => v == 2)
-// debugger
-//     if (num==2)
-//       this.viewtest = this.test
+
   
   onUpload(event) {
     for(let file of event.files) {
         this.uploadedFiles.push(file);
         console.log(this.uploadedFiles)
     }
+  }
+  next(){
+    this.continue.emit(true);
+   
   }
 }

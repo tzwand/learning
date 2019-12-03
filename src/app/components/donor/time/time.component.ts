@@ -1,9 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from 'selenium-webdriver/http';
 import { RequestService } from '../../../services/request/request.service';
 import { Time } from '../../../classes/Time';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
+import { NbStepperComponent } from '@nebular/theme';
 
 @Component({
   selector: 'app-time',
@@ -11,15 +12,17 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./time.component.css']
 })
 export class TimeComponent implements OnInit, OnDestroy {
+  @Output() continue = new EventEmitter();
 from: Date;
 until: Date;
 times;
 chosenTime
 
 dateFormControl = new FormControl({
-  start: new Date(Date.now()),
-  end: new Date(Date.now()),
+  start:[new Date(Date.now()),Validators.required],
+  end: [new Date(Date.now()),Validators.required],
 });
+  invalidDateAlert: boolean;
 
   constructor( private route: ActivatedRoute,
     private router: Router,
@@ -39,15 +42,27 @@ ngOnDestroy()
   this.times = this.req.times;
       }
       lastDateChosen(event){
+        debugger
 //emits when date changed in nb date picker
-this.req.request.registerEndDate=event;
 
  //retrieve the data from form control and update in server --on destroy too late
  this.req.request.reqStartDate=this.dateFormControl.value.start;
  this.req.request.reqEndDate=this.dateFormControl.value.end;
+
+ this.invalidDateAlert=false;
+//check that the last register date is before the learnung start date
+if(event>this.req.request.reqStartDate)
+//show an alert 
+this.invalidDateAlert=true;
+else
+this.req.request.registerEndDate=event;
+
+
       }
 next(){
-  this.router.navigate(['/group']);
+  if(!this.invalidDateAlert)
+  this.continue.emit(true);
+  // this.router.navigate(['/group']);
 }
 rangeChosen(event)
 
