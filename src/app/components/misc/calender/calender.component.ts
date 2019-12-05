@@ -87,9 +87,6 @@ if(e.event.id!="")
 alert(e.event.id)
 }
 openWindow(e) {
-  // const context = { text: "hi" };
-  // this.windowService.open(ConfirmLearningComponent, { title: 'Window with context', context });
-  // const dialogRef = this.dialogService.open(ConfirmLearningComponent,{  context :event.data });
   this.fileNameDialogRef = this.dialog.open(LearnerEventDetailsComponent,{
     hasBackdrop: true,
     data: {

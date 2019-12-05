@@ -17,10 +17,10 @@
   <br>
 
 
-  <!-- <h4 class="text-success">
+  <h4 class="text-success">
         <i class="nb-person"></i>מטרת הבקשה</h4>
-    {{request.reqPurpose}}
-    <br> -->
+    {{event.reqPurpose}}
+    <br>
      <h4 class="text-success">
     <i class="nb-person"></i>קוד ספר </h4>
     {{event.extendedProps.bookId}}
@@ -40,26 +40,26 @@
             <i class="nb-person"></i>תאריך סיום</h4>
             {{event.end}}
         <br>
-        <!-- <h4 class="text-success">
+         <h4 class="text-success">
             <i class="nb-person"></i> טווח זמן</h4>
-        {{request.timeDesc}}
+        {{event.timeDesc}}
         <br>
         <h4 class="text-success">
             <i class="nb-person"></i> סוג טווח זמן </h4>
-        {{request.timeId}}
+        {{event.timeId}}
         <br>
         <h4 class="text-success">
             <i class="nb-person"></i> תאריך סיום הרשמה</h4>
-        {{request.registerEndDate}} -->
-    <!-- <h4 class="text-success">
+        {{event.registerEndDate}} -->
+     <h4 class="text-success">
         <i class="nb-person"></i> תשלום  </h4>
-    {{request.payment}}
+    {{event.payment}}
     <h4 class="text-success">
         <i class="nb-person"></i> תאריך להגדלת תשלום</h4>
-    {{request.registerEndDate}}
+    {{event.registerEndDate}}
     <h4 class="text-success">
         <i class="nb-person"></i> תשלום מוגדל  </h4>
-    {{request.registerEndDate}} -->
+    {{event.registerEndDate}}
     <br>
   <button nbButton (click)="submit()">אישור</button>
   </nb-card-body>
