@@ -14,15 +14,15 @@
 <!-- <h5>חלוקה מאחורי הקלעים לפי ניקוד בטבלת ספר</h5> -->
 
 
-    <div *ngIf="sos" >
+    <!-- <div *ngIf="sos" >
       <h4>הסכום שאתה מציע לזמן קריטי:</h4>
-      <!-- ng model to donor's sum -->
+       ng model to donor's sum
       <input   nbInput type="number" [(ngModel)]="req.request.sosPayment" type="text" id="sosSum" /><br>
       <h4>התאריך הקריטי מבחינתך:  </h4>
 
       <input [nbDatepicker]="datepicker">
       <nb-datepicker #datepicker (dateChange)=dateChosen($event)></nb-datepicker>
-      <!-- <input type="datetime"  [(ngModel)]="req.donor.sosDate"  id="sosDate"/><br> -->
-    </div>
+      <input type="datetime"  [(ngModel)]="req.donor.sosDate"  id="sosDate"/><br> 
+    </div> -->
     <button nbButton status="success"  (click)="prev()"> הקודם</button>
     <button nbButton status="success"  (click)="next()"> הבא</button>

@@ -72,13 +72,14 @@ sendReq(): Observable<any> {
   totalPayment=0;
   createReqs(){
     debugger
-    this.reqBooks.forEach(book => {
-      this.totalPayment+=book.Bookpayment;
-    });
+    // this.reqBooks.forEach(book => {
+    //   this.totalPayment+=book.Bookpayment;
+    // });
     this.reqBooks.forEach(book => {
       //price calc with the right percentage from sos payment using previous function
-   var percentage=this.totalPayment/book.Bookpayment;
-    this.request.payment=book.Bookpayment+this.request.sosPayment/percentage;
+  //  var percentage=this.totalPayment/book.Bookpayment;
+    this.request.payment=book.Bookpayment+this.request.sosPayment
+    // /percentage;
       this.request.donorEmail=sessionStorage.getItem('donorEmail') ;
       this.request.password= sessionStorage.getItem("userPassword");
       this.request.BookId=book.bookId;
