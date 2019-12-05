@@ -28,6 +28,8 @@ export class GroupComponent implements OnInit {
   this.req.getOccuptions().subscribe((success)=>{ this.occupations= success;
   }
   )
+
+  //??
     this.occupations = []
     this.test= [1,2,1,2]
     this.viewtest=["","","",""]
@@ -38,13 +40,10 @@ export class GroupComponent implements OnInit {
   }
   onMenuItemSelected(event){
    
-    //event -- string array of selected items
-    console.log(event);
-    for(let i=0;i<event.length;i++){
-      console.log(event[i]);
-// first allow more than one occupation id
-        //  this.req.request.occuptionId+=event[i]
-    }
+    //event --  selected item
+  
+         this.req.request.occuptionId=event
+    
   }
   mychange(num) {
      if (num == 0)
