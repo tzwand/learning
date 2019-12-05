@@ -22,7 +22,7 @@
 
         </nb-card-header>
         <nb-card-body>
-          <app-book (continue)="nextStep($event)"></app-book>
+          <app-book (continue)="nextStep($event)" (back)="stepBack($event)"></app-book>
         </nb-card-body>
         </nb-card>
 
@@ -33,7 +33,7 @@
               <h2 class="text-success">תשלום </h2>
         </nb-card-header>
         <nb-card-body>
-          <app-payments (continue)="nextStep($event)"></app-payments>
+          <app-payments (continue)="nextStep($event)" (back)="stepBack($event)"></app-payments>
         </nb-card-body>
         </nb-card>
 
@@ -46,7 +46,7 @@
                 <h2 class="text-success">טווח זמן</h2>
           </nb-card-header>
           <nb-card-body>
-            <app-time (continue)="nextStep($event)"></app-time>
+            <app-time (continue)="nextStep($event)" (back)="stepBack($event)"></app-time>
           </nb-card-body>
           </nb-card>       
   </nb-step>
@@ -57,7 +57,7 @@
               <h2 class="text-success">קבוצות</h2>
         </nb-card-header>
         <nb-card-body>
-    <app-group (continue)="nextStep($event)"></app-group>
+    <app-group (continue)="nextStep($event)" (back)="stepBack($event)"></app-group>
         </nb-card-body>
         </nb-card>
 
@@ -68,7 +68,7 @@
             <h3 class="text-success">להלן פרטי הבקשה, עבור עליהם בעיון</h3>
       </nb-card-header>
       <nb-card-body>
-      <app-final-screen></app-final-screen>
+      <app-final-screen (back)="stepBack($event)"></app-final-screen>
       </nb-card-body>
       </nb-card>
 

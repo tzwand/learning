@@ -69,14 +69,22 @@ export class RequestService {
 sendReq(): Observable<any> {
    return this.http.post<any> (environment.BASIC_URL + 'api/forRequest/addRequest', this.request);
   };
+  totalPayment=0;
   createReqs(){
     debugger
     this.reqBooks.forEach(book => {
-    
+      this.totalPayment+=book.Bookpayment;
+    });
+    this.reqBooks.forEach(book => {
+      //price calc with the right percentage from sos payment using previous function
+   var percentage=this.totalPayment/book.Bookpayment;
+    this.request.payment=book.Bookpayment+this.request.sosPayment/percentage;
       this.request.donorEmail=sessionStorage.getItem('donorEmail') ;
       this.request.password= sessionStorage.getItem("userPassword");
       this.request.BookId=book.bookId;
       this.request.BookName=book.BookName;
+     
+      
       this.sendReq().subscribe(success=>{console.log(success)},error=>{console.log(error)});
     });
   }

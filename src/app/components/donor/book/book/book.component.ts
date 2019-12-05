@@ -15,6 +15,7 @@ import { BookService } from 'src/app/services/book/book.service';
 })
 export class BookComponent implements OnInit {
   @Output() continue = new EventEmitter();
+  @Output() back = new EventEmitter();
   bookListFromServerCopy: book[];
   constructor(private req: RequestService,private bookService:BookService) { }
 myList;
@@ -258,6 +259,11 @@ confirmBooks(){
 
 next(){
   this.continue.emit(true);
+ 
+}
+
+prev(){
+  this.back.emit(true);
  
 }
 }

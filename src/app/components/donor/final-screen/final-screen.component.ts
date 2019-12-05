@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RequestService } from '../../../services/request/request.service';
 import { occupation } from '../../../classes/occupation';
@@ -11,6 +11,7 @@ import { donor } from '../../../classes/donor';
   styleUrls: ['./final-screen.component.css']
 })
 export class FinalScreenComponent implements OnInit {
+  @Output() back = new EventEmitter();
   occupations: occupation[]
   private donor:donor
   constructor(
@@ -44,5 +45,8 @@ console.log(this.req.request)
   next() {
     this.req.createReqs()
     this.router.navigate(['/donor/dashboard']);
+  }
+  prev(){
+    this.back.emit(true);
   }
 }

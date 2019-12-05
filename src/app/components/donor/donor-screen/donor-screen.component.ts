@@ -22,5 +22,13 @@ nextStep(event){
   {
     this.stepper.next();
   }
+ 
+  }
+
+stepBack(event){
+  if(event==true)
+{
+  this.stepper.previous();
+}
 }
 }

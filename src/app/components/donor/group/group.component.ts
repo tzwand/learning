@@ -11,6 +11,7 @@ import { occupation } from '../../../classes/occupation';
 
 export class GroupComponent implements OnInit {
   @Output() continue = new EventEmitter();
+  @Output() back = new EventEmitter();
   uploadedFiles: any[] = [];
   genders: string[] = ['זכר', 'נקבה', 'לא משנה'];
   constructor(private route: ActivatedRoute,
@@ -82,6 +83,10 @@ export class GroupComponent implements OnInit {
   }
   next(){
     this.continue.emit(true);
+   
+  }
+  prev(){
+    this.back.emit(true);
    
   }
 }

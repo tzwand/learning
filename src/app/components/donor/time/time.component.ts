@@ -13,6 +13,7 @@ import { NbStepperComponent } from '@nebular/theme';
 })
 export class TimeComponent implements OnInit, OnDestroy {
   @Output() continue = new EventEmitter();
+  @Output() back = new EventEmitter();
 from: Date;
 until: Date;
 times;
@@ -63,6 +64,11 @@ next(){
   if(!this.invalidDateAlert)
   this.continue.emit(true);
   // this.router.navigate(['/group']);
+}
+prev(){
+ 
+  this.back.emit(true);
+ 
 }
 rangeChosen(event)
 

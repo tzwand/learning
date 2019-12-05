@@ -9,6 +9,7 @@ import { RequestService } from '../../../services/request/request.service';
 })
 export class PaymentsComponent implements OnInit {
   @Output() continue = new EventEmitter();
+  @Output() back = new EventEmitter();
 sum:number;
 // sosTime:Date;
 // sosSum:number=0;
@@ -31,6 +32,10 @@ this.req.request.sosDate=event;
 
 next(){
   this.continue.emit(true);
+  // this.router.navigate(['/time']);
+}
+prev(){
+  this.back.emit(true);
   // this.router.navigate(['/time']);
 }
 }
