@@ -60,6 +60,8 @@ import { LearnerEventDetailsComponent } from './components/learner/learner-event
 import { ExcelComponent } from './components/donor/excel/excel.component';
 import { ExcelFilesService } from './services/excelFiles/excel-files.service';
 import { ProfileComponent } from './components/login/profile/profile.component';
+import { VolunteerDashboardComponent} from './components/learner/volunteerLearner/volunteer-dashboard/volunteer-dashboard.component';
+import { VolunteerServiceService } from './services/volunteer-service.service';
 
 
 @NgModule({
@@ -81,7 +83,7 @@ import { ProfileComponent } from './components/login/profile/profile.component';
     NewRegisterComponent,
     FinalScreenComponent,
     NewLoginComponent, BookComponent, CalenderComponent, LearnerDashboardComponent,
-     StepCardComponent, ResetPasswordComponent, GroupsSettingsComponent,DonorDashboardComponent,ConfirmLearningComponent, LearenrsPerBookComponent, BooksForLearnerComponent, DashboardRequestsComponent, LearnerDetailsComponent, DashboardLearnersComponent, DashboardBooksComponent, LearnerEventDetailsComponent, ExcelComponent, ProfileComponent
+     StepCardComponent, ResetPasswordComponent, GroupsSettingsComponent,DonorDashboardComponent,ConfirmLearningComponent, LearenrsPerBookComponent, BooksForLearnerComponent, DashboardRequestsComponent, LearnerDetailsComponent, DashboardLearnersComponent, DashboardBooksComponent, LearnerEventDetailsComponent, ExcelComponent, ProfileComponent, VolunteerDashboardComponent
 
   ],
   imports: [
@@ -105,7 +107,7 @@ import { ProfileComponent } from './components/login/profile/profile.component';
     // AlertService,
     // AuthenticationService,
     NbSidebarService, CalendarServiceService,BookService,
-    UserService, NbMenuService, NbMenuInternalService,NbDialogService,ExcelFilesService,
+    UserService, NbMenuService, NbMenuInternalService,NbDialogService,ExcelFilesService,VolunteerServiceService
     // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 

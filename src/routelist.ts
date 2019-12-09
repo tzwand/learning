@@ -24,6 +24,7 @@ import { DashboardLearnersComponent } from './app/components/donor/dashboard/das
 import { DashboardRequestsComponent } from './app/components/donor/dashboard/dashboard-requests/dashboard-requests.component';
 import { LearnerDetailsComponent } from './app/components/donor/dashboard/learner-details/learner-details.component';
 import { ProfileComponent } from './app/components/login/profile/profile.component';
+import { VolunteerDashboardComponent } from './app/components/learner/volunteerLearner/volunteer-dashboard/volunteer-dashboard.component';
 
 export const appNavigations = [
 
@@ -61,6 +62,7 @@ children:[
       { path: 'payments', component: PaymentsComponent },
       { path: 'finalScreen', component: FinalScreenComponent },
       { path: 'purpose', component: PurposeComponent },
+      { path: 'volunteer', component: VolunteerDashboardComponent },
   
   // { path: 'profile', component: ProfileComponent },
   { path: 'app', component: AppComponent },
