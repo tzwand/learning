@@ -8,7 +8,7 @@ export class learner extends person {
     public sosRequests: boolean;
     public startDate: Date;
     public endDate: Date;
-    public groupName: string;
+    public groupId: number;
     public wantsToJoin: boolean;
 
     constructor(public learnerEmail: string,

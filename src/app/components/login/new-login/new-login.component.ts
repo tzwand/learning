@@ -52,6 +52,8 @@ export class NewLoginComponent implements OnInit {
       this.service.getLearner(this.newperson.email, this.newperson.password)
         .subscribe(success => {
         if (success != null) {
+          //if he is a volunteer set the right parameter in service
+          this.service.isLearnerVolunteer(success);
         this.router.navigate(['/learner']);
        sessionStorage.setItem('learnerName', success.learnerName);
        sessionStorage.setItem('learnerId', success.learnerId as unknown as string);

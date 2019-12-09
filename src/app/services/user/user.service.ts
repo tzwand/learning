@@ -13,7 +13,7 @@ export class UserService {
   currentUser;
   currentDonor;
   currentLearner;
-
+isVolunteer;
   constructor(private http: HttpClient) { }
 
   getAllPeople(): Observable<Array<learner>> {
@@ -50,6 +50,11 @@ export class UserService {
   }
   updateDonor(d: donor) {
     return this.http.put<Array<person>>(environment.BASIC_URL + "api/user/PutDonor", d);
+  }
+  isLearnerVolunteer(l:learner){
+if (l.groupId!=undefined)
+return true;
+return false;
   }
 
 }
