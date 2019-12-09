@@ -73,7 +73,8 @@ eventSourceToAdd= {
     return this.http.get<Array<book>>(environment.BASIC_URL + 'api/learner/GetCategories');
   }
   getColorForCategory(category:string): Observable<string> {
-    return this.http.get<string>(environment.BASIC_URL + 'api/learner/getColorForCategory/'+category);
+    var url=environment.BASIC_URL + 'api/learner/getColorForCategory/'+category;
+    return this.http.get(url, {responseType: 'text'});
   }
 
   createServerEvents(){
