@@ -19,7 +19,7 @@ export class AddLearningService {
     sessionStorage.setItem("currentLearner","7")
   }
   getCurrentRequests(learnerId:number): Observable<Array<offer>> {
-    return this.http.post<Array<offer>>(environment.BASIC_URL + "api/learner/PostCurrentRequestsPerLearner",learnerId as unknown as object)
+    return this.http.get<Array<offer>>(environment.BASIC_URL + "api/learner/getCurrentRequestsPerLearner/"+learnerId)
   }
   addLearning(m:matching):Observable<string>
   {
