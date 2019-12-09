@@ -12,8 +12,8 @@ export class ExcelFilesService {
 
   constructor(private http:HttpClient) { }
  
-   public saveExcelFile(j,userName,d1):Observable<any>{
-  return this.http.post<any>(environment.BASIC_URL+"api/File/SaveFileByBase64/"+j+"/"+userName+"/",d1);
+   public saveExcelFile(j,reqId,groupName,d1):Observable<any>{
+  return this.http.post<any>(environment.BASIC_URL+"api/File/SaveFileByBase64/"+j+"/"+reqId+"/"+groupName+"/",d1);
 }
 public downloadExcel(){
 saveAs(new Blob([],{ type: "pbrush" }),'LearnersExcelSheet.xlsx');

@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { base64 } from './base64';
 import { ExcelFilesService } from 'src/app/services/excelFiles/excel-files.service';
+import { RequestService } from 'src/app/services/request/request.service';
 
 @Component({
   selector: 'app-excel',
@@ -9,7 +10,8 @@ import { ExcelFilesService } from 'src/app/services/excelFiles/excel-files.servi
 })
 export class ExcelComponent implements OnInit {
 
-  constructor(private fileService:ExcelFilesService) { }
+  groupName="";
+  constructor(private fileService:ExcelFilesService,private req:RequestService) { }
 
   ngOnInit() {
   }
@@ -129,7 +131,10 @@ let j=  sessionStorage.getItem("fileNeme")
 let userName= sessionStorage.getItem("donorName")
 let d1:base64=new base64();
 d1.base64=y;
-this.fileService.saveExcelFile(j,userName,d1).subscribe((p)=>{alert("ברוך ה הצליח !");});
+//where do i get req id from?
+//its auto generated now!!
+//sent a number just to test it...
+this.fileService.saveExcelFile(j,1006,this.groupName,d1).subscribe((p)=>{alert("ברוך ה הצליח !");});
 
  }
 //  downloadFile(){

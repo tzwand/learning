@@ -1,5 +1,7 @@
 <!-- <p-fileUpload name="myfile[]" url="http://localhost:62299/api/forRequest/addUpload" multiple="multiple" accept=".xlsx" [auto]="true" (onUpload)="loadDocument($event)" #LoadDocument
 ></p-fileUpload> -->
+<label class="text-primary">שם הקבוצה</label>
+<input nbInput [(ngModel)]="groupName">
 <h4 class="text-success">הורד את הקובץ הריק שלנו: </h4>
 
 <button nbButton (click)="downloadFile('OtzarHalimud')" > הורד קובץ </button>
