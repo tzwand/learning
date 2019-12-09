@@ -12,7 +12,7 @@ event:any;
   ngOnInit() {
     debugger
     this.event = this.learnerEvent.event ? this.learnerEvent.event : ''
-
+console.log(event)
   }
   submit() {
     this.dialogRef.close();

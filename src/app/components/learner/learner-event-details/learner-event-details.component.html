@@ -1,5 +1,5 @@
 
-
+<mat-dialog-content>
 <div class="rtl">
 <nb-card accent="success" card-background-color="#ffffff">
     <nb-card-header>
@@ -19,7 +19,7 @@
 
   <h4 class="text-success">
         <i class="nb-person"></i>מטרת הבקשה</h4>
-    {{event.reqPurpose}}
+    {{event.extendedProps.reqPurpose}}
     <br>
      <h4 class="text-success">
     <i class="nb-person"></i>קוד ספר </h4>
@@ -42,26 +42,27 @@
         <br>
          <h4 class="text-success">
             <i class="nb-person"></i> טווח זמן</h4>
-        {{event.timeDesc}}
+        {{event.extendedProps.timeDesc}}
         <br>
         <h4 class="text-success">
             <i class="nb-person"></i> סוג טווח זמן </h4>
-        {{event.timeId}}
+        {{event.extendedProps.timeId}}
         <br>
         <h4 class="text-success">
             <i class="nb-person"></i> תאריך סיום הרשמה</h4>
-        {{event.registerEndDate}} -->
+        {{event.extendedProps.registerEndDate}}
      <h4 class="text-success">
         <i class="nb-person"></i> תשלום  </h4>
-    {{event.payment}}
+    {{event.extendedProps.payment}}
     <h4 class="text-success">
         <i class="nb-person"></i> תאריך להגדלת תשלום</h4>
-    {{event.registerEndDate}}
+    {{event.extendedProps.registerEndDate}}
     <h4 class="text-success">
         <i class="nb-person"></i> תשלום מוגדל  </h4>
-    {{event.registerEndDate}}
+    {{event.extendedProps.registerEndDate}}
     <br>
   <button nbButton (click)="submit()">אישור</button>
   </nb-card-body>
   </nb-card>
 </div>
+</mat-dialog-content>
