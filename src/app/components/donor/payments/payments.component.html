@@ -24,5 +24,5 @@
       <nb-datepicker #datepicker (dateChange)=dateChosen($event)></nb-datepicker>
       <input type="datetime"  [(ngModel)]="req.donor.sosDate"  id="sosDate"/><br> 
     </div> -->
-    <button nbButton status="success"  (click)="prev()"> הקודם</button>
+    <button nbButton status="warning"  (click)="prev()"> הקודם</button>
     <button nbButton status="success"  (click)="next()"> הבא</button>
