@@ -38,6 +38,14 @@
           <nb-option style="background-color:white"  *ngFor="let occuption of viewOccupations" value="occuption.occupationName">{{occuption.occupationName}}</nb-option>
         </nb-option-group>
         </nb-select>
+
+        <input nbInput
+fullWidth
+placeholder="בחר טווח תאריכים לתוכנית"
+[nbDatepicker]="formpicker"
+[formControl]="dateFormControl"
+#formControl="ngForm">
+<nb-rangepicker #formpicker></nb-rangepicker>
  
 </div>
 </div>

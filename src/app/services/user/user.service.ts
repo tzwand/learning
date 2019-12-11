@@ -11,8 +11,8 @@ import { donor } from '../../classes/donor';
 })
 export class UserService {
   currentUser;
-  currentDonor;
-  currentLearner;
+  currentDonor:donor;
+  currentLearner:learner;
 isVolunteer;
   constructor(private http: HttpClient) { }
 
@@ -53,8 +53,8 @@ isVolunteer;
   }
   isLearnerVolunteer(l:learner){
 if (l.groupId!=undefined)
-return true;
-return false;
+this.isVolunteer=true;
+this.isVolunteer=false;
   }
 
 }

@@ -4,6 +4,42 @@
   שם <input nbInput type="text" [(ngModel)]="userName" />
       מייל<input  nbInput type="text" [(ngModel)]="userEmail" />
       סיסמא<input  nbInput type="text" [(ngModel)]="userPassword" />
+
+      <div *ngIf="this.type=='learner'">
+
+         
+        
+              <label for="gender">מין</label>
+              <br>
+              <nb-checkbox  (change)="mychange(0)"> זכר</nb-checkbox>
+              <nb-checkbox   (change)="mychange(1)"> נקבה</nb-checkbox>
+              <nb-checkbox  (change)="mychange(2)"> לא משנה</nb-checkbox>
+               
+             
+        
+          <div class="form-group"  >
+              <label for="gender">עיסוק</label>
+              <nb-select  status="primary" placeholder="בחר..." filled="false" name="multiselect" (selectedChange)="onMenuItemSelected($event)">
+                  <nb-option-group  title="בחר..." style="background-color:white" >
+                  <nb-option style="background-color:white"  *ngFor="let occuption of viewOccupations" value="occuption.occupationName">{{occuption.occupationName}}</nb-option>
+                </nb-option-group>
+                </nb-select>
+        
+                <!-- <input nbInput
+        fullWidth
+        placeholder="בחר טווח תאריכים לתוכנית"
+        [nbDatepicker]="formpicker"
+        [formControl]="dateFormControl"
+        #formControl="ngForm">
+        <nb-rangepicker #formpicker></nb-rangepicker> -->
+        <input nbInput placeholder="{{ngModelDate.start | date}} - {{ngModelDate.end | date}}" [nbDatepicker]="ngmodel" [(ngModel)]="ngModelDate">
+        <nb-rangepicker #ngmodel
+        
+         > </nb-rangepicker> 
+    <!-- [min]="min" [max]="max"--->
+
+      </div>
+    </div>
       <button nbButton (click)="saveChanges()">שמור</button>
 </nb-card>
 </div>
