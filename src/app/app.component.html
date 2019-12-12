@@ -23,38 +23,21 @@
         <nb-layout-header fixed>
 
           <nb-search type="rotate-layout"></nb-search>
-          <nb-actions size="small">
+          <!-- <nb-actions size="small">
             <nb-action icon="nb-search"></nb-action>
             <nb-action icon="nb-power-circled"></nb-action>
             <nb-action icon="nb-person"></nb-action>
 
-          </nb-actions>
+          </nb-actions> -->
 
 
-<!--
-            <nb-tabset fullWidth="true"  (changeTab)="login(1)" >
-                   <nb-tab tabTitle="תורם"  id=0  (click)="login(0)">
-                      לימוד לזכות יקיריך
-                      <script>
-                          sessionStorage.setItem("kind","0");
-                      </script>
-                    </nb-tab>
 
-                    <nb-tab tabTitle="לומד"  id=1>
-
-                        להשתתפות במפעל הלימוד
-                        <script>
-                               sessionStorage.setItem("kind","1");
-                            </script>
-                             </nb-tab>
-
-                   </nb-tabset>
-            -->
-            <button [nbContextMenu]="items" nbContextMenuPlacement="right" class="btn btn-primary">
+                      
+            <button  style='position:absolute; top:0; left:0;'  [nbContextMenu]="items" nbContextMenuPlacement="right" class="btn btn-primary">
                 <nb-user [name]="userToDisplay" [title]="learner" shape="semi-round"></nb-user>
 
               </button>
-<!-- <nb-alert status="primary">
+<!-- <nb- status="primary">
     <h5>  תוצאות החיפוש עבור:{{ value || '-' }}</h5>
 </nb-alert> -->
 

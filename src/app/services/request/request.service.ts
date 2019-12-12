@@ -70,11 +70,15 @@ sendReq(): Observable<any> {
    return this.http.post<any> (environment.BASIC_URL + 'api/forRequest/addRequest', this.request);
   };
   totalPayment=0;
+  calcTotalPayments(){
+     //this for donor display
+     this.reqBooks.forEach(book => {
+      this.totalPayment+=book.Bookpayment;
+    });
+  }
   createReqs(){
     debugger
-    // this.reqBooks.forEach(book => {
-    //   this.totalPayment+=book.Bookpayment;
-    // });
+   
     this.reqBooks.forEach(book => {
       //price calc with the right percentage from sos payment using previous function
   //  var percentage=this.totalPayment/book.Bookpayment;

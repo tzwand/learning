@@ -64,7 +64,7 @@
 
   <br>
   
-  <input nbButton type="button"  value="להגדרת ספר משלך" (click)="createNewBookArea()"/>
+  <input nbButton  status="info" type="button"  value="להגדרת ספר משלך" (click)="createNewBookArea()"/>
   <br>
 <br>
    <!-- <nb-checkbox type="checkbox" id="new" (change)="new=!new"></nb-checkbox>  -->
@@ -78,5 +78,6 @@
 
 </div>
 </div>
+<nb-alert *ngIf="confirmBookAlert" status="danger">יש לאשר את בחירת הספרים באמצעות כפתור האישור</nb-alert>
 <button nbButton status="warning"  (click)="prev()"> הקודם</button>
 <button nbButton status="success"  (click)="next()"> הבא</button>

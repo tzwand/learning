@@ -1,6 +1,6 @@
 
 <!-- <br> -->
-<h4>הגדר סוג טווח זמן:</h4>
+<h4 class="text-primary"> סוג טווח זמן:</h4>
 
 
 <div *ngIf="req.times != null">
@@ -14,7 +14,7 @@
 <!-- <select id="time" jname="select"><br>
   <option *ngFor="let t of times" name="timeDesc">{{t.timeDesc}}</option>
 </select> -->
-<h4>הגדר טווח זמן: </h4>
+<h4 class="text-primary"> טווח זמן: </h4>
 
 <input nbInput
 fullWidth
@@ -27,8 +27,9 @@ placeholder="בחר טווח תאריכים לתוכנית"
 <!-- <br>
 <br> -->
 
-<h4>הגדר תאריך אחרון להרשמה</h4>
+<h4 class="text-primary"> תאריך אחרון להרשמה:</h4>
 <strong>עד לתאריך זה תוכל לבטל את ההצעה. בנוסף לכך המועמדים שלך יוכלו גם כן להסיר את המועמדות להצעה.</strong>
+<br>
 <!-- add validater -->
 <input [nbDatepicker]="datepicker">
 
@@ -41,6 +42,8 @@ placeholder="בחר טווח תאריכים לתוכנית"
 <!-- <input [nbDatepicker]="datepicker" [formControl]="endDateFormControl" >
   maxValidator()
 <br>-->
+<br>
+<br>
 <button nbButton status="warning"  (click)="prev()"> הקודם</button>
 <button nbButton status="success"  (click)="next()"> הבא</button>
 

@@ -21,7 +21,7 @@ sum:number;
   ngOnInit() {
   //ניגש לסרויס כדי לקבל את הסכום המקובל
 this.req.getRegularSum().subscribe(success=>{this.sum=success },err=>{console.error(err) });
-
+this.req.calcTotalPayments();
 //  this.sosTime= null
 // this.sosSum=0;
 // this.sos= false;

@@ -251,10 +251,13 @@ updateParents(nodeId: number) {
 }
 confirmBooks(){
  let i=0;
+ debugger
   this.selectedNodes.forEach(node => {
     this.req.reqBooks[i++]= node.data
   });
  console.log(this.req.reqBooks)
+ debugger
+ this.req.calcTotalPayments();
 }
 
 next(){

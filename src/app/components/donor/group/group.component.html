@@ -1,24 +1,28 @@
-<nb-card>
+
 <app-excel></app-excel>
-<h4>
-   תוכל להציע בקשה פתוחה לכולם או להגדיר קריטריונים מותאמים אישית</h4>
-<nb-checkbox type="checkbox" id="notDiffDateClosedGroups" ></nb-checkbox>
-<label>שלח את הבקשה 
-
+<nb-checkbox type="checkbox" id="notDiffDateClosedGroups"  (change)="groups=!groups"></nb-checkbox>
+<label>שלח את הבקשה
    ללומדי המערכת</label>
+   <br>
+<div *ngIf="groups">
+<!-- <h3>קבוצות לומדי מערכת</h3>
+<h4> קריטריונים מותאמים אישית</h4> -->
 
-<h4>הגדרות  אישיות:</h4>
+    
+<u><h3 class="text-info" >  לומדי מערכת</h3></u>
+<h4 class="text-primary" >הגדרות  אישיות:</h4>
 
-  <label>לפי ההגדרות שתכניס כאן המערכת תשלח את בקשתך ללומדים המתאימים.</label>
-  
-
+  <label>לפי האפשרויות שתגדיר כאן המערכת תשלח את בקשתך ללומדים המתאימים.</label>
+  <br>
+<h5 class="text-info">מגדר</h5>
     <nb-checkbox  (change)="mychange(0)"> זכר</nb-checkbox>
     <nb-checkbox   (change)="mychange(1)"> נקבה</nb-checkbox>
     <nb-checkbox  (change)="mychange(2)"> לא משנה</nb-checkbox>
 
+<br>
 
 
- 
+<h5 class="text-info">עיסוק</h5>
 
   <nb-select  status="primary" placeholder="בחר..." filled="false" name="multiselect" (selectedChange)="onMenuItemSelected($event)">
     <nb-option-group  title="בחר..." style="background-color:white" >
@@ -26,8 +30,8 @@
   </nb-option-group>
   </nb-select>
  
-  <label>
-</label>
+<br>
+</div>
 <button nbButton status="warning"  (click)="prev()"> הקודם</button>
 <button nbButton status="success"  (click)="next()"> הבא</button>
 <br>

@@ -1,16 +1,35 @@
 <!-- <p-fileUpload name="myfile[]" url="http://localhost:62299/api/forRequest/addUpload" multiple="multiple" accept=".xlsx" [auto]="true" (onUpload)="loadDocument($event)" #LoadDocument
 ></p-fileUpload> -->
-<label class="text-primary">שם הקבוצה</label>
+<u><h3 class="text-info" >  קבוצות מתנדבים </h3></u>
+<label class="text-primary">
+  <h4 class="text-primary">
+  שם הקבוצה
+</h4>
+</label>
 <input nbInput [(ngModel)]="groupName">
-<h4 class="text-success">הורד את הקובץ הריק שלנו: </h4>
+<br>
+<h5 class="text-success">הורד את הקובץ שלנו: 
+  <i class="nb-arrow-thin-down"></i>
+</h5>
 
 <button nbButton (click)="downloadFile('OtzarHalimud')" > הורד קובץ </button>
-<h4 class="text-success">הזן את פרטי הלומדים הפוטנציונליים.</h4>
+<br>
+<h6 class="text-info">הזן  פרטי הלומדים הפוטנציונליים
+  <i class="nb-compose"></i>
+</h6>
 
 <label for="LoadDocument" class="browse">
   <h4 class="text-success">
-  העלה את הקובץ המעודכן:</h4></label>
+  העלה את הקובץ המעודכן:
+  <i class="nb-cloudy"></i></h4></label>
 <br>
-<input nbInput type="file" (change)="readURL($event)" name="LoadDocument" #LoadDocument  />
+
+<input  class="success" type="file" (change)="readURL($event)" name="LoadDocument" #LoadDocument  />
 
 <button nbButton (click)="saveFile()" >שלח קובץ</button>
+<br>
+<br>
+<h1>
+<i class="nb-gear"></i>
+<i class="nb-gear"></i>
+<i class="nb-gear"></i></h1>
