@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RequestService } from '../../../services/request/request.service';
 import { occupation } from '../../../classes/occupation';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-group',
   templateUrl: './group.component.html',
@@ -44,9 +44,9 @@ export class GroupComponent implements OnInit {
     // this.Occupations = this.req.getOccuptions()
   }
   onMenuItemSelected(event){
-   
+   debugger
     //event --  selected item
-  
+    // this.req.request= $("#dropDownId").children("option").filter(":selected").val() 
          this.req.request.occuptionId=event
     
   }

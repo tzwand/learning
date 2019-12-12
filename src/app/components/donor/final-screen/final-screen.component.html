@@ -14,6 +14,10 @@
 <!-- <br> -->
 <label> {{req.request.reqPurpose}}</label>
 <br>
+<h4 class="text-primary">ספרים </h4>
+<!-- <br> -->
+<label *ngFor="let b of req.reqBooks"> {{b.BookName}},</label>
+<br>
 <!-- <br> -->
 <h4 class="text-primary"> טווח זמן</h4>
 <!-- <br> -->
