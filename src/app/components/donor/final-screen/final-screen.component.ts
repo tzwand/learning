@@ -19,29 +19,27 @@ export class FinalScreenComponent implements OnInit {
     private router: Router,
     private req: RequestService,//נסרויס של הבקשה -כולל פונקציות שקשורות לבקשה
 
-    // private userName: string,
-    // private email: string,
-    // private purpose: string,
-    // private timeType: string,
-    // private startDate: Date,
-    // private maxPrice: number,
-    // private endDate: Date,
-    // private sosPrice: number,
-    // private chosen: string
+    
+
   ) {
     this.occupations = [];
+
 
   }
   ngOnInit() {
     this.donor = this.req.donor   //הפרטים של הבקשה בעצמה-מגיע מהתורם שבסרויס
     
-    this.req.getOccuptions()//מקבלים ישר מהסרויס רשימת זמנים
+    // this.req.getOccuptions()//מקבלים ישר מהסרויס רשימת זמנים
+     var occupation=this.req.occupations.filter(o=>o.occuptionId==this.req.request.occuptionId)
+     this.occupationName=occupation[0].occupationName;
 console.log(this.req.request)
   }
   // next() {
   //   this.req.sendReq(this.donor)
   //   this.router.navigate(['/donor/2/3']);
   // }
+  occupationName;
+
   next() {
     this.req.createReqs()
     this.router.navigate(['/donor/dashboard']);

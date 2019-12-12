@@ -18,7 +18,7 @@ export class RequestService {
   donor: donor;
   request: offer;
   donorbook: book;
-  occupations: Array<occupation>;
+  occupations=[];
   purposes: Array<string>;
   reqBooks=[];
   // bookListFromServer: book[];
@@ -46,10 +46,13 @@ export class RequestService {
 
   }
   getOccuptions(): Observable<Array<occupation>> {
-    if (this.occupations == null) {
+    // if (this.occupations == null) {
       return this.http.get<Array<occupation>>(environment.BASIC_URL + 'api/forRequest/GetOccupations');
-    }
-    return null;
+    // }
+    // return null;
+  }
+  setOccupationList(){
+    this.getOccuptions().subscribe((success)=>{ this.occupations= success;})
   }
   getPurposes(): Array<string> {
     return environment.purposeList;

@@ -17,22 +17,23 @@ export class GroupComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private router: Router, private req: RequestService) { }
   selected: string;
-  occupations: occupation[];
-  test:any[];
-  chosenTest:any;
-  viewtest: any[]
   viewOccupations=[];
  
   ngOnInit() {
    
-  this.req.getOccuptions().subscribe((success)=>{ this.occupations= success;
-  }
-  )
+  
+    
 
-  //??
-    this.occupations = []
-    this.test= [1,2,1,2]
-    this.viewtest=["","","",""]
+  //fill the occupation list in server
+  this.req.setOccupationList();
+
+ 
+   
+  
+ 
+  
+    
+  
   }
    parseDate(input) {
     var parts = input.match(/(\d+)/g);
@@ -48,27 +49,28 @@ export class GroupComponent implements OnInit {
     //event --  selected item
     // this.req.request= $("#dropDownId").children("option").filter(":selected").val() 
          this.req.request.occuptionId=event
+
     
   }
   mychange(num) {
      if (num == 0)
      if(this.viewOccupations.find(x=>x.gender=="male")==undefined)
      {
-      this.viewOccupations = this.viewOccupations.concat(this.occupations.filter(v => v.gender == "male"))
+      this.viewOccupations = this.viewOccupations.concat(this.req.occupations.filter(v => v.gender == "male"))
       this.req.request.genderId="0";
      }
       if(this.viewOccupations.find(x=>x.gender=="female")==undefined)
       
       if (num == 1)
       {
-      this.viewOccupations = this.viewOccupations.concat(this.occupations.filter(v => v.gender == "female"))
+      this.viewOccupations = this.viewOccupations.concat(this.req.occupations.filter(v => v.gender == "female"))
       this.req.request.genderId="1";
       }
       if((this.viewOccupations.find(x=>x.gender=="male")==undefined)||(this.viewOccupations.find(x=>x.gender=="female")==undefined))
       
       if (num == 2)
       {
-      this.viewOccupations = this.occupations
+      this.viewOccupations = this.req.occupations
       this.req.request.genderId="2";
       }
       
