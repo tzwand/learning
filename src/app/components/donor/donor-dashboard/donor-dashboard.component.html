@@ -1,0 +1,20 @@
+<div class="rtl">
+    <nb-search type="modal-half"></nb-search>
+    <nb-tabset responsive>
+        <nb-tab tabTitle="בקשות" badgeText="1" badgeStatus="primary" tabIcon="nb-tables">
+            <app-dashboard-requests></app-dashboard-requests>
+        </nb-tab>
+
+        <nb-tab tabTitle="ספרים" badgeText="1" badgeStatus="success" tabIcon="nb-list">
+          <br>
+          <app-dashboard-books></app-dashboard-books>
+              <br>
+              <br>
+        </nb-tab>
+        <nb-tab tabTitle="לומדים" badgeText="1" badgeStatus="info" tabIcon="nb-person">
+הצגה לפי לומדים
+<app-dashboard-learners></app-dashboard-learners>
+          </nb-tab>
+       </nb-tabset>
+
+</div>

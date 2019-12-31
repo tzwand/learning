@@ -1,0 +1,67 @@
+<div class="rtl">
+    <div style="width:30%">
+  <h2>הרשמה</h2>
+  <div class="container">
+    <form class="form" #formRegisterperson="ngForm" (ngSubmit)="saveForm()">
+
+    <div class="form-group" >
+        <label for="Name">שם</label>
+      <input nbInput type="text" name="id" [(ngModel)]="newperson.name" class="form-control" placeholder="שם" #personName="ngModel" required  [ngClass]="{ 'is-invalid': personName.invalid && (personName.dirty || personName.touched) }">
+      <div class="alert-danger" *ngIf="personName.invalid && (personName.dirty || personName.touched)" >
+      <div class="alert-danger" *ngIf="personName.errors.required">שם הוא שדה חובה</div>
+
+      </div>
+    </div>
+
+    <div class="form-group"  >
+        <label for="email">מייל</label>
+      <input nbInput  class="ltr" type="text" name="email" [(ngModel)]="newperson.email" class="form-control" placeholder="מייל" #personEmail="ngModel" required email  [ngClass]="{ 'is-invalid': personEmail.invalid && (personEmail.dirty || personEmail.touched) }">
+      <div class="alert-danger" *ngIf="personEmail.invalid && (personEmail.dirty || personEmail.touched)" >
+          <div class="alert-danger" *ngIf="personEmail.errors.required">חובה להכניס כתובת מייל</div>
+          <div class="alert-danger" *ngIf="personEmail.errors.email">כתובת מייל חייבת להיות תקנית</div>
+    </div>
+  </div>
+  <div *ngIf="type==0">
+  <div class="form-group"  >
+      <label for="gender">מין</label>
+      <br>
+      <nb-checkbox  (change)="mychange(0)"> זכר</nb-checkbox>
+      <nb-checkbox   (change)="mychange(1)"> נקבה</nb-checkbox>
+      <nb-checkbox  (change)="mychange(2)"> לא משנה</nb-checkbox>
+       
+     
+  </div>
+  <div class="form-group"  >
+      <label for="gender">עיסוק</label>
+      <nb-select  status="primary" placeholder="בחר..." filled="false" name="multiselect" (selectedChange)="onMenuItemSelected($event)">
+          <nb-option-group  title="בחר..." style="background-color:white" >
+          <nb-option style="background-color:white"  *ngFor="let occuption of viewOccupations" value="occuption.occupationName">{{occuption.occupationName}}</nb-option>
+        </nb-option-group>
+        </nb-select>
+
+        <input nbInput
+fullWidth
+placeholder="בחר טווח תאריכים לתוכנית"
+[nbDatepicker]="formpicker"
+[formControl]="dateFormControl"
+#formControl="ngForm">
+<nb-rangepicker #formpicker></nb-rangepicker>
+ 
+</div>
+</div>
+
+
+
+
+
+   
+   <div class="ltr">
+    <button nbButton type="submit" class="btn btn-success" [disabled]="!formRegisterperson.form.valid" >שלח</button>
+    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+          <a [routerLink]="['/login']" class="btn btn-link">ביטול</a>
+        </div>
+    </form>
+  </div>
+
+    </div>
+

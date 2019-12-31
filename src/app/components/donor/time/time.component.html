@@ -1,0 +1,49 @@
+
+<!-- <br> -->
+<h4 class="text-primary"> סוג טווח זמן:</h4>
+
+
+<div *ngIf="req.times != null">
+<nb-select status="primary" placeholder="בחר..." filled="false" name="multiselect" (selectedChange)="onMenuItemSelected($event)">
+  <nb-option-group  title="בחר..." style="background-color:white" >
+  <nb-option style="background-color:white"  *ngFor="let t of req.times" value="{{t.timeDesc}}">{{t.timeDesc}}</nb-option>
+</nb-option-group>
+</nb-select>
+</div>
+<br>
+<!-- <select id="time" jname="select"><br>
+  <option *ngFor="let t of times" name="timeDesc">{{t.timeDesc}}</option>
+</select> -->
+<h4 class="text-primary"> טווח זמן: </h4>
+
+<input nbInput
+fullWidth
+placeholder="בחר טווח תאריכים לתוכנית"
+[nbDatepicker]="formpicker"
+[formControl]="dateFormControl"
+#formControl="ngForm">
+<nb-rangepicker #formpicker></nb-rangepicker>
+<!-- <p>Is valid: {{ dateFormControl.valid }}</p> -->
+<!-- <br>
+<br> -->
+
+<h4 class="text-primary"> תאריך אחרון להרשמה:</h4>
+<strong>עד לתאריך זה תוכל לבטל את ההצעה. בנוסף לכך המועמדים שלך יוכלו גם כן להסיר את המועמדות להצעה.</strong>
+<br>
+<!-- add validater -->
+<input [nbDatepicker]="datepicker">
+
+<nb-datepicker #datepicker 
+  (dateChange)=lastDateChosen($event) ></nb-datepicker>
+    <nb-alert  size="tiny" status="danger" *ngIf="invalidDateAlert">
+           תאריך אחרון להרשמה חייב להיות לפני תאריך ההתחלה של התוכנית
+            </nb-alert>
+  <!-- <nb-datepicker  #datepicker [(ngModel)]="req.request.registerEndDate"></nb-datepicker>  -->
+<!-- <input [nbDatepicker]="datepicker" [formControl]="endDateFormControl" >
+  maxValidator()
+<br>-->
+<br>
+<br>
+<button nbButton status="warning"  (click)="prev()"> הקודם</button>
+<button nbButton status="success"  (click)="next()"> הבא</button>
+

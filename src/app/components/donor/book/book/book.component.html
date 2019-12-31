@@ -1,0 +1,83 @@
+<div>
+
+  <h4 class="text-success">בחר את הספר הרצוי מתוך רשימת הספרים או הכנס ספר משלך:</h4>
+  <label>הגדרנו עבורך סכום מקובל לתשלום.</label>
+  <label> ניתן לערוך את הסכום לתשלום בעמודה המתאימה לפי רצונך.</label>
+  <!-- <div *ngIf="bookService.showBookDataTable"> -->
+
+<p-treeTable [value]="bookService.list" [columns]="cols2" selectionMode="checkbox" [(selection)]="selectedNodes" dataKey="BookId" >
+      <ng-template pTemplate="caption">
+          <div style="text-align:right">
+              <p-treeTableHeaderCheckbox></p-treeTableHeaderCheckbox>
+              <span style="margin-left: .25em; vertical-align: middle">בחר הכל</span>
+          </div>
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+          <tr>
+              <th *ngFor="let col of columns">
+                  {{col.header}}
+                 
+              </th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+          <tr>
+              <td *ngFor="let col of columns; let i = index;" ttEditableColumn [ngClass]="{'ui-toggler-column': i === 0}">
+                <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0"></p-treeTableToggler>
+                <p-treeTableCheckbox [value]="rowNode" *ngIf="i === 0"></p-treeTableCheckbox>
+                <p-treeTableCellEditor>
+                    <ng-template pTemplate="input" *ngIf="i === 2">
+                        <input  #myinput pInputText type="text" [(ngModel)]="rowData[col.field]"  (blur)="print(myinput.value)"(ngModelChange)="modelChanged(rowData.BookId ,oldVal, $event); oldVal = $event;"
+                         [ngStyle]="{'width': i == 0 ? '90%': '100%'}"   >
+                    </ng-template>
+
+                    <ng-template pTemplate="input" *ngIf="i !== 2">
+                      <td>
+                   {{rowData[col.field]}}
+                    </td>
+                  </ng-template>
+                    <div *ngIf="i===0">
+                    </div>
+                    <ng-template pTemplate="output">{{rowData[col.field]}}</ng-template>
+                </p-treeTableCellEditor>
+              </td>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+          <div style="text-align: right">
+              הספרים שבחרת: <span *ngIf="!selectedNodes || selectedNodes.length === 0" style="font-weight: normal">none</span>
+              <ul *ngIf="selectedNodes && selectedNodes.length">
+                  <li *ngFor="let node of selectedNodes">
+                      <span style="font-weight: normal">{{node.data.BookId + ' - ' + node.data.BookName + ' - ' + node.data.Bookpayment+'-'+node.data.Bookinfo}}</span>
+                  </li>
+              </ul>
+          </div>
+      </ng-template>
+  </p-treeTable>
+
+  <button nbButton (click)="confirmBooks()">אישור</button>
+<!-- {{selectedNodes}} -->
+<!-- </div> -->
+
+
+  
+
+  <br>
+  
+  <input nbButton  status="info" type="button"  value="להגדרת ספר משלך" (click)="createNewBookArea()"/>
+  <br>
+<br>
+   <!-- <nb-checkbox type="checkbox" id="new" (change)="new=!new"></nb-checkbox>  -->
+  <div *ngIf="newBook">
+    שם הספר<input nbInput type="text" [(ngModel)]="chosen.BookName" />
+<br>
+    <br/>
+
+    תאור קצר על הספר<input  nbInput type="text" [(ngModel)]="chosen.BookInfo" />
+
+
+</div>
+</div>
+<nb-alert *ngIf="confirmBookAlert" status="danger">יש לאשר את בחירת הספרים באמצעות כפתור האישור</nb-alert>
+<button nbButton status="warning"  (click)="prev()"> הקודם</button>
+<button nbButton status="success"  (click)="next()"> הבא</button>

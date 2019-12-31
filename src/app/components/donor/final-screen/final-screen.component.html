@@ -1,0 +1,63 @@
+
+<br>
+<h4 class="text-primary">פרטים אישיים</h4>
+<!-- <br> -->
+<label class="text-success">  שם משתמש</label>
+<br>
+<label>{{req.donor.name}}</label>
+<br>
+<label class="text-success">  מייל</label>
+<br>
+<label>{{req.donor.email}}</label>
+<br>
+<h4 class="text-primary">מטרת הבקשה</h4>
+<!-- <br> -->
+<label> {{req.request.reqPurpose}}</label>
+<br>
+<h4 class="text-primary">ספרים </h4>
+<!-- <br> -->
+<label *ngFor="let b of req.reqBooks"> {{b.BookName}},</label>
+<br>
+<!-- <br> -->
+<h4 class="text-primary"> טווח זמן</h4>
+<!-- <br> -->
+<label>{{req.request.timeDesc}}</label>
+<!-- <br> -->
+
+<!-- <br> -->
+<h5>החל מ:</h5>
+<!-- <br> -->
+<label>{{req.request.reqStartDate|date}}</label>
+<!-- <br> -->
+<h5>עד:</h5>
+<!-- <br> -->
+<label>{{req.request.reqEndDate|date}}</label>
+<!-- <br>
+<br> -->
+<h4 class="text-primary">סה"כ  הסכום לתשלום</h4>
+<!-- <br> -->
+<label>{{req.totalPayment}}</label>
+<!-- <br> -->
+<!-- <h5>מתוכו סכום המוגדר רק עבור זמן קריטי:</h5>
+ <br> 
+<label>{{req.request.sosPayment}}</label> -->
+<!-- <br>
+<br> -->
+<h4 class="text-primary">הקבוצות שהגדרת מתוך לומדי המערכת שלנו:</h4>
+<!-- <br> -->
+<label>{{occupationName}}</label>
+
+<!-- <select>
+    <option *ngFor= "let c of chosen"></option>
+</select> -->
+<!-- <br>
+<br> -->
+<br>
+<nb-checkbox></nb-checkbox>
+<!-- <label><h4 class="text-warning">אני מסכים לכללי המערכת</h4></label>
+<br>
+<a href="#" >לקריאה</a>
+<br> -->
+<br>
+<button nbButton status="warning"  (click)="prev()"> הקודם</button>
+<button nbButton class=" btn btn-success" (click)="next()">אישור</button>

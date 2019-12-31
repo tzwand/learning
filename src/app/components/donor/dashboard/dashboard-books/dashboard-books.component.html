@@ -1,0 +1,31 @@
+<nb-card *ngFor="let book of books" accent="info" card-background-color="#ffffff">
+    <nb-card-header>
+        
+       <h3 class="text-success"> שם: {{book.BookName}}</h3> 
+    </nb-card-header>
+    <nb-card-body>
+      <div class="">
+          <!-- תאריך התחלה:   {{reqeust.reqStartDate| date}}
+          <br>
+      תאריך סיום:   {{reqeust.reqEndDate| date}}
+      <br> -->
+    
+      <h5 class="text-info"> קוד ספר: {{book.BookId}}</h5>
+     
+      <h5 class="text-info"> מידע נוסף :  {{book.Bookinfo}}</h5>
+      <h5 class="text-info">  תשלום:  {{book.Bookpayment}}</h5>
+     
+          <a [routerLink]="['/learnersPerBook/'+book.BookId]" class="btn btn-link">הצג לומדים
+
+
+            <!-- <button (click)="showLearners()">הצג לומדים</button> -->
+          <i class="nb-angle-double-left"></i></a>
+      <nb-progress-bar [value]="25" size="tiny"></nb-progress-bar>
+
+
+
+      <!-- {{reqeust}} -->
+
+    </div>
+    </nb-card-body>
+  </nb-card>

@@ -1,0 +1,18 @@
+<div class="rtl"> 
+<nb-card *ngFor="let l of learners" accent="info" card-background-color="#ffffff">
+  <nb-card-header>
+     
+     <h3 class="text-info"> שם: {{l.learnerName}}</h3> 
+       <!-- קוד : {{l.learnerId}} -->
+  </nb-card-header>
+
+  <nb-card-body>
+  
+   <i class="nb-angle-double-left"></i>פרטים אישיים
+   <app-learner-details [learner]="l" ></app-learner-details>
+
+   <button nbButton (click)="deleteMatch(l)" status="danger" >בטל לומד</button>
+
+  </nb-card-body>
+</nb-card>
+</div>

@@ -1,0 +1,35 @@
+<button nbButton  value="הצג דף היומי" type="button" (click)="changeDafHayomei()">{{dyBool}} דף היומי </button>
+<div class="container">
+  <full-calendar #mycalender id='calendar'
+    defaultView="dayGridMonth"
+    [plugins]="calendarPlugins"
+    locale="heLocale"
+   [eventSources]="this.calService.visibleEvents"
+
+    dir="rtl"
+    selectable="true"
+    
+    (eventClick)="EventClick($event)"
+
+    (dateClick)="dateClick($event)"
+    [header]= "{
+      left: 'next, prev today custom!',
+      center: 'title',
+      right: 'listWeek'
+
+    }"
+    options="options"
+    [displayEventTime]='false'
+    [buttonText]="{
+      today:'היום',
+      month:'תצוגה חודשית',
+      week:'תצוגה שבועית',
+      day:'תצוגה יומית',
+      list:'רשימה'
+
+    }"
+
+  ></full-calendar>
+  </div>
+
+
