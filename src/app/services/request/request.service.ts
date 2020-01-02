@@ -35,6 +35,7 @@ export class RequestService {
     this.donor.reqStartDate = new Date('02/09/2019');
     this.donor.sosDate = null;
     this.request= new offer()
+    this.helpArrayConvertBooksToReqs=[];
     
   }
   getTimes() {
@@ -72,6 +73,10 @@ export class RequestService {
 sendReq(): Observable<any> {
    return this.http.post<any> (environment.BASIC_URL + 'api/forRequest/addRequest', this.request);
   };
+  
+sendReqList(): Observable<any> {
+  return this.http.post<any> (environment.BASIC_URL + 'api/forRequest/addRequestListPost', this.helpArrayConvertBooksToReqs);
+ };
   totalPayment=0;
   calcTotalPayments(){
      //this for donor display
@@ -79,6 +84,7 @@ sendReq(): Observable<any> {
       this.totalPayment+=book.Bookpayment;
     });
   }
+  helpArrayConvertBooksToReqs:offer[];
   createReqs(){
     debugger
    
@@ -92,9 +98,10 @@ sendReq(): Observable<any> {
       this.request.BookId=book.bookId;
       this.request.BookName=book.BookName;
      
-      
-      this.sendReq().subscribe(success=>{console.log(success)},error=>{console.log(error)});
+      this.helpArrayConvertBooksToReqs.concat(this.request);
+    //  this.sendReq().subscribe(success=>{console.log(success)},error=>{console.log(error)});
     });
+       this.sendReqList().subscribe(success=>{console.log(success)},error=>{console.log(error)});
   }
 
 getLearnersForRequest(reqId:number):Observable<Array<learner>>

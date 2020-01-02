@@ -52,9 +52,7 @@ export class LearnerScreenComponent implements OnInit {
     reqId: {
       title: 'קוד בקשה'
     },
-    donorName: {
-      title: 'שם היזם ',
-    },
+   
     BookId: {
       title: 'קוד הספר'
     },
@@ -174,7 +172,7 @@ this.data= new Array<any>()
         ({
         
           reqId:this.offers[i].reqId,
-          donorName:this.offers[i].reqId,
+         
           BookId:this.offers[i].BookId,
           BookName: this.offers[i].BookName,
           reqPurpose: this.offers[i].reqPurpose,
