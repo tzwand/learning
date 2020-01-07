@@ -27,14 +27,14 @@ export class AppComponent implements OnInit {
       route: '/login/1',
     }
   ];
-
+  navDashboardlink='';
   items = [{ title: 'פרופיל', link: '/profile' },
   { title: 'יציאה', link: '/login/1' }];
 
-   items2= [
+   itemsLearner= [
     {
       title: 'עמוד הבית',
-     link: `${sessionStorage.getItem('userType') =='learner'? 'learner':'donor'}/dashboard`
+     link: 'learner/dashboard'
       // link: sessionStorage.getItem('userType') =='learner'? 'learner/dashboard':'donor/dashboard'
     },
     {
@@ -42,6 +42,19 @@ export class AppComponent implements OnInit {
       link: '/'
     }
    ];
+
+   itemsDonor= [
+    {
+      title: 'עמוד הבית',
+     link: 'donor/dashboard'
+      // link: sessionStorage.getItem('userType') =='learner'? 'learner/dashboard':'donor/dashboard'
+    },
+    {
+      title: 'יציאה',
+      link: '/'
+    }
+   ];
+ 
  
   data1: person[]
   settings = {
@@ -86,14 +99,20 @@ export class AppComponent implements OnInit {
   //  data = [this.data1]
 
 
+init=false;
   constructor(private router: Router, private route: ActivatedRoute, private service: UserService, private searchService: NbSearchService) {
     this.searchService.onSearchSubmit()
     .subscribe((data: any) => {
       this.value = data.term;
     })
    }
+   sidebarItems;
   ngOnInit(): void {
+  
+   this.init=true;
     this.userTitleToDisplay=sessionStorage.getItem('userType');
+     this.sidebarItems=this.userTitleToDisplay=="donor"?this.itemsDonor:this.itemsLearner;
+    this.navDashboardlink=this.userTitleToDisplay+'/dashboard';
 this.userToDisplay=sessionStorage.getItem('userEmail') ? sessionStorage.getItem('userEmail'): ""
     this.cards = ["hello", "how ", "are", "you", "today"]
     this.data = [

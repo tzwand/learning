@@ -48,7 +48,8 @@ src="../assets/pictures/otzarLogo.jpg">
         </nb-layout-header>
 <nb-sidebar responsive  >
     <i class="eva eva-github"></i>
-  <nb-menu [items]="items2"></nb-menu>
+    <div *ngIf="init"></div>
+  <nb-menu [items]="sidebarItems"></nb-menu>
   
 </nb-sidebar>
 
