@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
       responsive: true, // hide title before `route-tabs-icon-only-max-width` value
     },
     {
-      title: 'תורם',
+      title: 'יזם',
       route: '/login/1',
     }
   ];

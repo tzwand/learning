@@ -75,7 +75,7 @@ export class LearnerScreenComponent implements OnInit {
           title: 'תדירות'
         },
         payment: {
-          title: 'סכום המילגה'
+          title: 'תשלום'
         },
         reqPurpose: {
           title: 'מוקדש ל:'
