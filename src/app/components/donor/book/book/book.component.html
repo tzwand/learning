@@ -27,7 +27,7 @@
                 <p-treeTableCheckbox [value]="rowNode" *ngIf="i === 0"></p-treeTableCheckbox>
                 <p-treeTableCellEditor>
                     <ng-template pTemplate="input" *ngIf="i === 2">
-                        <input  #myinput pInputText type="text" [(ngModel)]="rowData[col.field]"  (blur)="print(myinput.value)"(ngModelChange)="modelChanged(rowData.BookId ,oldVal, $event); oldVal = $event;"
+                        <input  #myinput pInputText type="number" [(ngModel)]="rowData[col.field]"  (blur)="print(myinput.value)"(ngModelChange)="modelChanged(rowData.BookId ,oldVal, $event); oldVal = $event;"
                          [ngStyle]="{'width': i == 0 ? '90%': '100%'}"   >
                     </ng-template>
 
