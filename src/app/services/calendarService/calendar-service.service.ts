@@ -88,7 +88,7 @@ onGetCategoriesSuccess(){
   for (let i=0;i<this.catCount;i++)
   {
  var color;
-this.getColorForCategory(this.categories[i].BookName).subscribe(success=>{this.colorNewEvent=success ,this.addEventSource(i);}
+this.getColorForCategory(this.categories[i].BookName).subscribe(success=>{this.colorNewEvent=success ,this.colorNewEvent= this.colorNewEvent.slice(1,this.colorNewEvent.length-1),this.addEventSource(i);}
   ,err=>{console.error(err)});
 }
 }
@@ -100,9 +100,9 @@ addEventSource(bookNum)
     id: this.eventId++,
     url: "http://localhost:62299/api/learner/GetCurrentLearningDatesByCategory/"+sessionStorage.getItem('learnerId')+'/'+this.categories[bookNum].BookId,
     cache: true,
-    color: 'lightgray',
-    textColor: this.colorNewEvent,
-    borderColor:this.colorNewEvent,
+    color: this.colorNewEvent,
+    textColor: 'lightgray',
+    borderColor:'lightgray',
     allDay: true, 
      extendedProps: {
       learningEvent: true
