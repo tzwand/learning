@@ -12,14 +12,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import {CalendarModule} from 'primeng/calendar';
 import { FullCalendarModule } from '@fullcalendar/angular';
-// import { LoginComponent } from './register/register/login/login.component';
-// import { ProfileComponent } from './register/register/profile/profile.component';
-// import { HomeComponent } from './register/register/home/home.component';
-// import { RegisterComponent } from './register/register/register';
-// import { AuthGuard } from './register/_guards';
-// import { AlertService,AuthenticationService,UserService } from './register/_services';
-// import { AlertComponent } from './register/_directives';
-// import { JwtInterceptor,ErrorInterceptor,fakeBackendProvider} from './register/_helpers';
 import { TimeComponent } from './components/donor/time/time.component';
 import { PaymentsComponent } from './components/donor/payments/payments.component';
 import { GroupComponent } from './components/donor/group/group.component';
@@ -62,6 +54,7 @@ import { ExcelFilesService } from './services/excelFiles/excel-files.service';
 import { ProfileComponent } from './components/login/profile/profile.component';
 import { VolunteerDashboardComponent} from './components/learner/volunteerLearner/volunteer-dashboard/volunteer-dashboard.component';
 import { VolunteerServiceService } from './services/volunteer-service.service';
+import { StartComponent } from './components/misc/start/start.component';
 
 
 @NgModule({
@@ -83,7 +76,7 @@ import { VolunteerServiceService } from './services/volunteer-service.service';
     NewRegisterComponent,
     FinalScreenComponent,
     NewLoginComponent, BookComponent, CalenderComponent, LearnerDashboardComponent,
-     StepCardComponent, ResetPasswordComponent, GroupsSettingsComponent,DonorDashboardComponent,ConfirmLearningComponent, LearenrsPerBookComponent, BooksForLearnerComponent, DashboardRequestsComponent, LearnerDetailsComponent, DashboardLearnersComponent, DashboardBooksComponent, LearnerEventDetailsComponent, ExcelComponent, ProfileComponent, VolunteerDashboardComponent
+     StepCardComponent, ResetPasswordComponent, GroupsSettingsComponent,DonorDashboardComponent,ConfirmLearningComponent, LearenrsPerBookComponent, BooksForLearnerComponent, DashboardRequestsComponent, LearnerDetailsComponent, DashboardLearnersComponent, DashboardBooksComponent, LearnerEventDetailsComponent, ExcelComponent, ProfileComponent, VolunteerDashboardComponent, StartComponent
 
   ],
   imports: [
@@ -107,7 +100,8 @@ import { VolunteerServiceService } from './services/volunteer-service.service';
     // AlertService,
     // AuthenticationService,
     NbSidebarService, CalendarServiceService,BookService,
-    UserService, NbMenuService, NbMenuInternalService,NbDialogService,ExcelFilesService,VolunteerServiceService
+    UserService, NbMenuService, NbMenuInternalService,NbDialogService,ExcelFilesService,
+    VolunteerServiceService
     // { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
@@ -118,7 +112,3 @@ import { VolunteerServiceService } from './services/volunteer-service.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-
-

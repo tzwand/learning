@@ -5,15 +5,11 @@
       מייל<input  nbInput type="text" [(ngModel)]="userEmail" />
       סיסמא<input  nbInput type="text" [(ngModel)]="userPassword" />
 
-      <div *ngIf="this.type=='learner'">
-
-         
-        
+      <div *ngIf="this.type=='learner'">        
               <label for="gender">מין</label>
               <br>
               <nb-checkbox  (change)="mychange(0)"> זכר</nb-checkbox>
               <nb-checkbox   (change)="mychange(1)"> נקבה</nb-checkbox>
-              <nb-checkbox  (change)="mychange(2)"> לא משנה</nb-checkbox>
                
              
         
@@ -32,7 +28,8 @@
         [formControl]="dateFormControl"
         #formControl="ngForm">
         <nb-rangepicker #formpicker></nb-rangepicker> -->
-        <input nbInput placeholder="{{ngModelDate.start | date}} - {{ngModelDate.end | date}}" [nbDatepicker]="ngmodel" [(ngModel)]="ngModelDate">
+        <input nbInput placeholder="{{ngModelDate.start | date}} - {{ngModelDate.end | date}}" 
+        [nbDatepicker]="ngmodel" [(ngModel)]="ngModelDate" ngModelDate.end>
         <nb-rangepicker #ngmodel
         
          > </nb-rangepicker> 
