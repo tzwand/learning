@@ -7,7 +7,9 @@
 
     <div class="form-group"  >
         <label for="personEmail">מייל</label>
-      <input nbInput  class="ltr" type="text" name="email" [(ngModel)]="newperson.email" class="form-control" placeholder="מייל" #personEmail="ngModel" required email  [ngClass]="{ 'is-invalid': personEmail.invalid && (personEmail.dirty || personEmail.touched) }">
+      <input nbInput  class="ltr" type="text" name="email" 
+      [(ngModel)]="newperson.email" class="form-control" placeholder="מייל" 
+      #personEmail="ngModel" required email  [ngClass]="{ 'is-invalid': personEmail.invalid && (personEmail.dirty || personEmail.touched) }">
       <div class="alert-danger" *ngIf="personEmail.invalid && (personEmail.dirty || personEmail.touched)" >
           <!-- <nb-alert  size="tiny" status="danger" *ngIf="personEmail.errors.email">
               זה המייל שלך? לא יכול להיות!
