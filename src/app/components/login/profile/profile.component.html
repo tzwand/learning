@@ -1,9 +1,16 @@
 <div class="rtl">
-<nb-card>
+<!-- <nb-card> -->
   <h2 class="text-success">עדכון פרטי משתמש </h2>
   שם <input nbInput type="text" [(ngModel)]="userName" />
+
+  <br>
+  <br>
       מייל<input  nbInput type="text" [(ngModel)]="userEmail" />
+      <br>
+      <br>
       סיסמא<input  nbInput type="text" [(ngModel)]="userPassword" />
+      <br>
+      <br>
 
       <div *ngIf="this.type=='learner'">
 
@@ -15,7 +22,7 @@
               <nb-checkbox   (change)="mychange(1)"> נקבה</nb-checkbox>
               <nb-checkbox  (change)="mychange(2)"> לא משנה</nb-checkbox>
                
-             
+             <br>
         
           <div class="form-group"  >
               <label for="gender">עיסוק</label>
@@ -24,7 +31,7 @@
                   <nb-option style="background-color:white"  *ngFor="let occuption of viewOccupations" value="occuption.occupationName">{{occuption.occupationName}}</nb-option>
                 </nb-option-group>
                 </nb-select>
-        
+        <br>
                 <!-- <input nbInput
         fullWidth
         placeholder="בחר טווח תאריכים לתוכנית"
@@ -36,10 +43,10 @@
         <nb-rangepicker #ngmodel
         
          > </nb-rangepicker> 
-    <!-- [min]="min" [max]="max"--->
+    <!-- [min]="min" [max]="max"-->
 
       </div>
     </div>
       <button nbButton (click)="saveChanges()">שמור</button>
-</nb-card>
+<!-- </nb-card> -->
 </div>
