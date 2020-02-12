@@ -32,6 +32,7 @@ export class AddLearningService {
   getAllMatchings(){
     return this.http.get<Array<matching>>(environment.BASIC_URL+"api/matching/getAllMatchings").subscribe(success => { this.allMatching = success; }, error => { console.log(error); });
   }
+  
   deleteMatchByDonorLearnerAndBook(donorId:string,learnerId:number,bookId:number):Observable<matching>{
     return this.http.get<matching>(environment.BASIC_URL+"api/matching/getMatchByDonorLearnerAndBook"+'/'+donorId+'/'+learnerId+'/'+bookId)
   }

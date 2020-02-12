@@ -5,6 +5,7 @@ import { UserService } from '../../../services/user/user.service';
 import { occupation } from 'src/app/classes/occupation';
 import { RequestService } from 'src/app/services/request/request.service';
 import { FormControl, Validators } from '@angular/forms';
+import { learner } from 'src/app/classes/learner';
 
 @Component({
   selector: 'app-new-register',
@@ -45,8 +46,11 @@ dateFormControl = new FormControl({
       , error => { console.log("It's a problem - " + error.massage) })
   }
 else if (this.type == 0){
-  this.service.addLearner
-  ( this.newperson.name , this.newperson.email )
+this.service.currentLearner= new learner(this.newperson.email,"","","");
+ this.service.currentLearner.email=this.newperson.email;
+ this.service.currentLearner.name= this.newperson.name;
+  this.service.addLearnerWithDetails
+  ( this.service.currentLearner)
     .subscribe(success => { 
       alert("ההרשמה הסתיימה בהצלחה")
       this.router.navigate(['/login/'+this.type]);

@@ -165,14 +165,14 @@ this.data= new Array<any>()
   }
 
   onSuccess(){
+    if(this.offers[0]!=undefined){
     console.log("BookName:"+ this.offers[0].reqPurpose +"extraInfo:"+ this.offers[0].extraInfo)
     for (let i = 0; i < this.offers.length; i++) {
 //gender and ocuupation id not a must becaue it is filtered to start with, obvieslt we dont show donor email and password...
       this.data.push
         ({
         
-          reqId:this.offers[i].reqId,
-         
+          reqId:this.offers[i].reqId,         
           BookId:this.offers[i].BookId,
           BookName: this.offers[i].BookName,
           reqPurpose: this.offers[i].reqPurpose,
@@ -186,6 +186,7 @@ this.data= new Array<any>()
         });
         this.show=true
     }
+  }
   }
   onDeleteConfirm(event) {
     //alert("onDeleteConfirm");

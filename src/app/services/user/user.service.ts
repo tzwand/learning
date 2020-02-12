@@ -28,6 +28,9 @@ isVolunteer;
   addLearner(name: string,email:string): Observable<learner> {
     return this.http.post<learner>(environment.BASIC_URL + "api/user/addLearner",[name,email]);
   }
+  addLearnerWithDetails(learner :learner): Observable<learner> {
+    return this.http.post<learner>(environment.BASIC_URL + "api/user/addLearnerWithDetails",learner);
+  }
   addDonor(name: string,email:string): Observable<Array<person>> {
     return this.http.post<Array<person>>(environment.BASIC_URL + "api/user/addDonor", [name,email]);
   }
