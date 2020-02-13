@@ -5,6 +5,7 @@ import { learner } from 'src/app/classes/learner';
 import { FormControl, Validators } from '@angular/forms';
 import { occupation } from 'src/app/classes/occupation';
 import { RequestService } from 'src/app/services/request/request.service';
+import {CalendarModule} from 'primeng/calendar';
 
 @Component({
   selector: 'app-profile',
@@ -18,6 +19,7 @@ export class ProfileComponent implements OnInit {
   type: string;
   viewOccupations = [];
   occupations: occupation[];
+  rangeDates: Date[];
   constructor(private userService: UserService, private req: RequestService) { }
 
 
@@ -69,9 +71,9 @@ export class ProfileComponent implements OnInit {
 
 
       //set extra information for learner
-      this.learnerToEdit.startDate = (this.ngModelDate.start);
-      this.learnerToEdit.endDate = (this.ngModelDate.end);
-debugger
+      this.learnerToEdit.startDate = this.rangeDates[0];
+      this.learnerToEdit.endDate = this.rangeDates[1];
+
       this.userService.updateLearner(this.learnerToEdit).subscribe(success => { console.log(success), sessionStorage.setItem('learnerName', this.userName); }, error => console.log(error));
     }
     sessionStorage.setItem('userEmail', this.userEmail);
@@ -102,7 +104,7 @@ debugger
 
     //event --  selected item
 
-    this.learnerToEdit.occuptionName = event
+    this.learnerToEdit.occuptionId = event
 
   }
 }

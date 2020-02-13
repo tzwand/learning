@@ -5,6 +5,7 @@ import { RequestService } from '../../../services/request/request.service';
 import { Time } from '../../../classes/Time';
 import { FormControl, Validators } from '@angular/forms';
 import { NbStepperComponent } from '@nebular/theme';
+import {CalendarModule} from 'primeng/calendar';
 
 @Component({
   selector: 'app-time',
@@ -14,6 +15,7 @@ import { NbStepperComponent } from '@nebular/theme';
 export class TimeComponent implements OnInit, OnDestroy {
   @Output() continue = new EventEmitter();
   @Output() back = new EventEmitter();
+rangeDates: Date[];
 from: Date;
 until: Date;
 times;
@@ -47,8 +49,8 @@ ngOnDestroy()
 //emits when date changed in nb date picker
 
  //retrieve the data from form control and update in server --on destroy too late
- this.req.request.reqStartDate=this.dateFormControl.value.start;
- this.req.request.reqEndDate=this.dateFormControl.value.end;
+ this.req.request.reqStartDate=this.rangeDates[0];
+ this.req.request.reqEndDate=this.rangeDates[1];
 
  this.invalidDateAlert=false;
 //check that the last register date is before the learnung start date

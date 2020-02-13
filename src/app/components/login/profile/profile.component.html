@@ -35,11 +35,16 @@
         [formControl]="dateFormControl"
         #formControl="ngForm">
         <nb-rangepicker #formpicker></nb-rangepicker> -->
+
+<!-- 
         <input nbInput placeholder="{{ngModelDate.start | date}} - {{ngModelDate.end | date}}" 
         [nbDatepicker]="ngmodel" [(ngModel)]="ngModelDate" ngModelDate.end>
         <nb-rangepicker #ngmodel
         
-         > </nb-rangepicker> 
+         > </nb-rangepicker>  -->
+         <label >טווח תאריכים לרישום לתוכנית</label>
+         <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true"></p-calendar>
+
     <!-- [min]="min" [max]="max"-->
 
       </div>

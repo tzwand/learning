@@ -43,10 +43,11 @@
               </nb-option-group>
             </nb-select>
 <br>
-            <input nbInput fullWidth placeholder="בחר טווח תאריכים לתוכנית" [nbDatepicker]="formpicker"
+            <!-- <input nbInput fullWidth placeholder="בחר טווח תאריכים לתוכנית" [nbDatepicker]="formpicker"
               [formControl]="dateFormControl" #formControl="ngForm">
-            <nb-rangepicker #formpicker></nb-rangepicker>
-
+            <nb-rangepicker #formpicker></nb-rangepicker> -->
+            <label >טווח תאריכים לרישום לתוכנית</label>
+            <p-calendar  [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" name="calender"></p-calendar>
           </div>
         </div>
 

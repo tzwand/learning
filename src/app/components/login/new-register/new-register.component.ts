@@ -6,15 +6,19 @@ import { occupation } from 'src/app/classes/occupation';
 import { RequestService } from 'src/app/services/request/request.service';
 import { FormControl, Validators } from '@angular/forms';
 import { learner } from 'src/app/classes/learner';
+import {CalendarModule} from 'primeng/calendar';
+import { DatePipe } from '@angular/common' 
 
 @Component({
   selector: 'app-new-register',
   templateUrl: './new-register.component.html',
-  styleUrls: ['./new-register.component.css']
+  styleUrls: ['./new-register.component.css'],
+  providers: [DatePipe]
 })
 export class NewRegisterComponent implements OnInit {
 constructor( private route: ActivatedRoute,
-private router: Router,private service: UserService,private req:RequestService) { }
+private router: Router,private service: UserService,private req:RequestService, private datePipe: DatePipe) { }
+rangeDates: Date[];
 newperson: person;
 type: any;
 temp="";
@@ -23,6 +27,7 @@ dateFormControl = new FormControl({
   end: [new Date(Date.now()),Validators.required],
 });
   ngOnInit() {
+    this.service.currentLearner= new learner("","","","");
     this.req.getOccuptions().subscribe((success)=>{ this.occupations= success;
     }
     )
@@ -46,7 +51,7 @@ dateFormControl = new FormControl({
       , error => { console.log("It's a problem - " + error.massage) })
   }
 else if (this.type == 0){
-this.service.currentLearner= new learner(this.newperson.email,"","","");
+
  this.service.currentLearner.email=this.newperson.email;
  this.service.currentLearner.name= this.newperson.name;
   this.service.addLearnerWithDetails
@@ -58,8 +63,13 @@ this.service.currentLearner= new learner(this.newperson.email,"","","");
     }
       , error => { console.log("It's a problem - " + error.massage) })
   }
-  this.service.currentLearner.startDate=this.dateFormControl.value.start;
-  this.service.currentLearner.endDate=this.dateFormControl.value.end;
+  
+ 
+  this.service.currentLearner.startDate=this.datePipe.transform(this.rangeDates[0], 'yyyy-MM-dd HH:mm:ss.SSS');
+  
+  this.service.currentLearner.endDate=this.datePipe.transform(this.rangeDates[1], 'yyyy-MM-dd HH:mm:ss.SSS');
+  debugger
+
   //the create function only puts the basic information about the learner
   //update the extra information
   this.service.updateLearner(this.service.currentLearner)
@@ -94,7 +104,7 @@ this.newperson = new person();
    
       //event --  selected item
     
-           this.service.currentLearner.occuptionName=event
+           this.service.currentLearner.occuptionId=event
       
     }
 
