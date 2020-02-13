@@ -9,18 +9,18 @@ import { AddLearningService } from 'src/app/services/addLearning/add-learning.se
 export class LearnerEventDetailsComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<LearnerEventDetailsComponent>, @Inject(MAT_DIALOG_DATA) private learnerEvent, private learning:AddLearningService) { }
-event:any;
+  event:any;
   ngOnInit() {
-    debugger
-    this.event = this.learnerEvent.event ? this.learnerEvent.event : ''
+  debugger
+  this.event = this.learnerEvent.event ? this.learnerEvent.event : ''
 console.log(event)
   }
   submit() {
     this.dialogRef.close();
   }
 
-  cancelLearning(){
-    debugger
+cancelLearning(){
+debugger
 this.learning.deleteMatchByDonorLearnerAndBook(this.event.extendedProps.donorEmail.slice(0,-4),sessionStorage.getItem('learnerId') as unknown as number,this.event.extendedProps.bookId).subscribe((success)=>console.log("match deleted"),(error)=>console.log(error))
 this.dialogRef.close();
 }

@@ -71,7 +71,7 @@ export class ProfileComponent implements OnInit {
       //set extra information for learner
       this.learnerToEdit.startDate = (this.ngModelDate.start);
       this.learnerToEdit.endDate = (this.ngModelDate.end);
-
+debugger
       this.userService.updateLearner(this.learnerToEdit).subscribe(success => { console.log(success), sessionStorage.setItem('learnerName', this.userName); }, error => console.log(error));
     }
     sessionStorage.setItem('userEmail', this.userEmail);

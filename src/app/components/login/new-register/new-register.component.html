@@ -15,44 +15,7 @@
           </div>
         </div>
 
-<<<<<<< HEAD
-    <div class="form-group"  >
-        <label for="email">מייל</label>
-      <input nbInput  class="ltr" type="text" name="email" [(ngModel)]="newperson.email" class="form-control" placeholder="מייל" #personEmail="ngModel" required email  [ngClass]="{ 'is-invalid': personEmail.invalid && (personEmail.dirty || personEmail.touched) }">
-      <div class="alert-danger" *ngIf="personEmail.invalid && (personEmail.dirty || personEmail.touched)" >
-          <div class="alert-danger" *ngIf="personEmail.errors.required">חובה להכניס כתובת מייל</div>
-          <div class="alert-danger" *ngIf="personEmail.errors.email">כתובת מייל חייבת להיות תקנית</div>
-    </div>
-  </div>
-  <div *ngIf="type==0">
-  <div class="form-group"  >
-      <label for="gender">מין</label>
-      <br>
-      <nb-checkbox  (change)="mychange(0)"> זכר</nb-checkbox>
-      <nb-checkbox   (change)="mychange(1)"> נקבה</nb-checkbox>
-      <nb-checkbox  (change)="mychange(2)"> לא משנה</nb-checkbox>
-       
-     
-  </div>
-  <div class="form-group"  >
-      <label for="gender">עיסוק</label>
-      <nb-select  status="primary" placeholder="בחר..." filled="false" name="multiselect" (selectedChange)="onMenuItemSelected($event)">
-          <nb-option-group  title="בחר..." style="background-color:white" >
-          <nb-option style="background-color:white"  *ngFor="let occuption of viewOccupations" value="occuption.occupationName">{{occuption.occupationName}}</nb-option>
-        </nb-option-group>
-        </nb-select>
-<br>
-        <input nbInput
-fullWidth
-placeholder="בחר טווח תאריכים לתוכנית"
-[nbDatepicker]="formpicker"
-[formControl]="dateFormControl"
-#formControl="ngForm">
-<nb-rangepicker #formpicker></nb-rangepicker>
- 
-</div>
-</div>
-=======
+
         <div class="form-group">
           <label for="email">מייל</label>
           <input nbInput class="ltr" type="text" name="email" [(ngModel)]="newperson.email" class="form-control"
@@ -76,12 +39,10 @@ placeholder="בחר טווח תאריכים לתוכנית"
             <nb-select status="primary" placeholder="בחר..." filled="false" name="multiselect"
               (selectedChange)="onMenuItemSelected($event)">
               <nb-option-group title="בחר..." style="background-color:white">
-                <nb-option style="background-color:white" *ngFor="let occuption of viewOccupations"
-                  value="occuption.occupationName">{{occuption.occupationName}}</nb-option>
+                <nb-option style="background-color:white"  *ngFor="let occupation of viewOccupations" value="{{occupation.occuptionId}}">{{occupation.occupationName}}</nb-option>
               </nb-option-group>
             </nb-select>
->>>>>>> ffb8b29309585bb69a1d5b07d37fe3078dce9af4
-
+<br>
             <input nbInput fullWidth placeholder="בחר טווח תאריכים לתוכנית" [nbDatepicker]="formpicker"
               [formControl]="dateFormControl" #formControl="ngForm">
             <nb-rangepicker #formpicker></nb-rangepicker>
