@@ -1,127 +1,38 @@
 <div class="rtl">
-  <nb-layout>
-    <nb-layout-header fixed>
-      <nb-search type="rotate-layout"></nb-search>
-      <!-- profil -->
-      <button style='position:absolute; top:0; left:0;' [nbContextMenu]="items" nbContextMenuPlacement="right"
-        class="btn btn-primary">
-        <nb-user [name]="userToDisplay" [title]="learner" shape="semi-round"></nb-user>
+<nb-layout>
+  <nb-layout-header fixed>
+    <nb-search type="rotate-layout"></nb-search>
+    <!-- profil -->
+    <button style='position:absolute; top:0; left:0;' [nbContextMenu]="items" nbContextMenuPlacement="right"
+      class="btn btn-primary">
+      <nb-user [name]="userToDisplay" [title]="learner" shape="semi-round"></nb-user>
 
-      </button>
-   
-
-      <img style='position:absolute; top:0; right:0;width: 10%;height: 100%;' src="../assets/pictures/otzarLogo.jpg">
+    </button>
 
 
-    </nb-layout-header>
-    <nb-sidebar responsive>
-      <i class="eva eva-github"></i>
-      <div *ngIf="init"></div>
-      <nb-menu [items]="sidebarItems"></nb-menu>
-
-    </nb-sidebar>
-    <nb-layout-column>
-      <!-- <embed src="../assets/docs/otzar halimud desc.txt"> -->
-      <div class="rtl">
-           
-      </div>
-    </nb-layout-column>
-
-    <nb-layout-column >
-      <div>
-        <nb-route-tabset [tabs]="tabs"></nb-route-tabset>
-      </div>
-      <router-outlet></router-outlet>
-    </nb-layout-column>
-    
-  </nb-layout>
-</div>
-
-<<<<<<< HEAD
-        <nb-layout-header fixed>
-
-          <nb-search type="rotate-layout"></nb-search>
-          <!-- <nb-actions size="small">
-            <nb-action icon="nb-search"></nb-action>
-            <nb-action icon="nb-power-circled"></nb-action>
-            <nb-action icon="nb-person"></nb-action>
-
-          </nb-actions> -->
+    <img style='position:absolute; top:0; right:0;width: 10%;height: 100%;' src="../assets/pictures/otzarLogo.jpg">
 
 
-
-                      
-            <button  style='position:absolute; top:0; left:0;'  [nbContextMenu]="items" nbContextMenuPlacement="right" class="btn btn-primary">
-                <nb-user [name]="userToDisplay" [title]="learner" shape="semi-round"></nb-user>
-
-              </button>
-<!-- <nb- status="primary">
-    <h5>  תוצאות החיפוש עבור:{{ value || '-' }}</h5>
-</nb-alert> -->
-
-<img style='position:absolute; top:0; right:0;width: 10%;height: 100%;'  
-src="../assets/pictures/otzarLogo.jpg">
-
-
-        </nb-layout-header>
-<nb-sidebar responsive  >
+  </nb-layout-header>
+  <nb-sidebar responsive>
     <i class="eva eva-github"></i>
     <div *ngIf="init"></div>
-  <nb-menu [items]="sidebarItems"></nb-menu>
-  
-</nb-sidebar>
-<!-- <nb-layout-column layout-content-width=50%> -->
-  <!-- <embed src="../assets/docs/otzar halimud desc.txt"> -->
+    <nb-menu [items]="sidebarItems"></nb-menu>
+
+  </nb-sidebar>
+  <!-- <nb-layout-column>
+     <embed src="../assets/docs/otzar halimud desc.txt"> -->
     <!-- <div class="rtl">
-<h2 class="text-success">ברוכים הבאים לאוצר הלימוד</h2>
-<br>
-אוצר הלימוד הינו הפלטפורמה שלנו לתיווך לומדים ויזמים המעוניינים לעודד לימוד. 
-<br>
-תפגשו כאן פלטפורמה מדהימה הניתנת להתאמה לפי כמה אפשרויות:
-<br>
-<br>
-<h4 class="text-success">יזם:</h4>
 
-<br>
-תוכל לבחור בין קבוצות לימוד של לומדי המערכת לקבוצות של מתנדבים פוטנציונליים.
-באפשרותך לבחור בין לימוד של ספר או חלקי ספר, לבחור את טווח הזמן ואת התדירות של הלימוד, תוכל להגדיר תשלום ועוד.
-<br>
-איך זה עובד?
-<br>
-היכנס לאתר, הגדר חשבון אישי באמצעות מייל בלבד, צור תוכניות לימוד, ותוכל לצפות בתוכניות הקיימות.
-<br>
-להתראות...
-<br>
-<br>
-<h4 class="text-success">לומד:</h4>
-
-<br>
-באפשרותך לבחור להצטרף לתוכניות הלימוד הפתוחות ללומדי המערכת שלנו. תוכל לצפות בתוכניות שלך באמצעות לוח שנה כשתוכניות הלימוד נמצאות שם על פי תאריכי הלימוד.
-<br>
-איך זה עובד?
-<br>
-היכנס לאתר, פתח חשבון אישי, ותוכל להתחיל לבחור ממגוון התוכניות הקיימות. בנינו עבורך ממשק נוח לחיפוש ומיון  אפשרויות הלימוד.
-לאחר מכן תוכל לצפות בלוח השנה שלך עם תוכניות הלימוד שלך.
-<br>
-להתראות...
-<br>
-<strong>לתמיכה: otzarlimud@gmail.com</strong>
-  </div>
-</nb-layout-column> -->
-
-        <nb-layout-column layout-content-width=50%>
-                <div ><nb-route-tabset  [tabs]="tabs"></nb-route-tabset></div>
-<router-outlet></router-outlet>
-
-                      <!-- <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table> -->
-
-
-        </nb-layout-column>
-        <!-- <nb-layout-column layout-content-width=50%>
-           </nb-layout-column> -->
-      </nb-layout>
     </div>
+  </nb-layout-column> -->
 
-<!-- <button class="btn btn-success"(click)="guestEnter()">לכניסה ללא הרשמה </button> -->
-=======
->>>>>>> ffb8b29309585bb69a1d5b07d37fe3078dce9af4
+  <nb-layout-column >
+    <div>
+      <nb-route-tabset [tabs]="tabs"></nb-route-tabset>
+    </div>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+</nb-layout>
+</div>

@@ -21,7 +21,8 @@ console.log(event)
 
   cancelLearning(){
     debugger
-this.learning.deleteMatchByDonorLearnerAndBook(this.event.extendedProps.donorEmail.slice(0,-4),sessionStorage.getItem('learnerId') as unknown as number,this.event.extendedProps.bookId).subscribe((success)=>console.log("match deleted"),(error)=>console.log(error))
+this.learning.deleteMatchByDonorLearnerAndBook
+(this.event.extendedProps.donorEmail.slice(0,-4),sessionStorage.getItem('learnerId') as unknown as number,this.event.extendedProps.bookId).subscribe((success)=>console.log("match deleted"),(error)=>console.log(error))
 this.dialogRef.close();
 }
 
