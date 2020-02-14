@@ -51,7 +51,7 @@ ngOnDestroy()
  //retrieve the data from form control and update in server --on destroy too late
  this.req.request.reqStartDate=this.rangeDates[0];
  this.req.request.reqEndDate=this.rangeDates[1];
-
+debugger
  this.invalidDateAlert=false;
 //check that the last register date is before the learnung start date
 if(event>this.req.request.reqStartDate)

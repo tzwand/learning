@@ -1,11 +1,12 @@
 <button nbButton class="btn btn-success" (click)="toggleShowDetails()"> {{toggleShow}} ספרים  </button>
             <nb-card *ngFor="let learner of learners;index as i;" accent="info" card-background-color="#ffffff">
                 <nb-card-header>
-                    <nb-badge [text]="numOfActiveLearnings"  status="warning"></nb-badge>
+                    <!-- <nb-badge [text]="numOfActiveLearnings"  status="warning"></nb-badge> -->
                     <h3 class="text-info"> שם: {{learner.learnerName}}</h3> 
                 </nb-card-header>
 
-  <nb-card-body>  <nb-badge [text]="numOfActiveLearnings"  status="primary" position="top right" ></nb-badge>
+  <nb-card-body>  
+    <!-- <nb-badge [text]="numOfActiveLearnings"  status="primary" position="top right" ></nb-badge> -->
     <!-- <div class="nb-badge-danger">{{numOfActiveLearnings}}</div> -->
                   <div class="">
 
