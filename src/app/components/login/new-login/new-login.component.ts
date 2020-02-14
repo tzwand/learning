@@ -39,7 +39,7 @@ export class NewLoginComponent implements OnInit {
     sessionStorage.setItem('userPassword', this.newperson.password);
       this.service.getDonor(this.newperson.email, this.newperson.password)
         .subscribe(success => {
-        if (success != null) { this.router.navigate(['/donor']),
+        if (success != null) { this.router.navigate(['/donor/dashboard']),
         sessionStorage.setItem('donorEmail', success.donorEmail),
         sessionStorage.setItem('donorName', success.donorName),
         console.log(success);
@@ -54,7 +54,7 @@ export class NewLoginComponent implements OnInit {
         if (success != null) {
           //if he is a volunteer set the right parameter in service
           this.service.isLearnerVolunteer(success);
-        this.router.navigate(['/learner']);
+        this.router.navigate(['/learner/dashboard']);
        sessionStorage.setItem('learnerName', success.learnerName);
        sessionStorage.setItem('learnerId', success.learnerId as unknown as string);
         } else { this.goRegister = true; }}

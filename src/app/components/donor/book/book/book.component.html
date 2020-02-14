@@ -58,12 +58,7 @@
   <button nbButton (click)="confirmBooks()">אישור</button>
 <!-- {{selectedNodes}} -->
 <!-- </div> -->
-
-
-  
-
   <br>
-  
   <input nbButton  status="info" type="button"  value="להגדרת ספר משלך" (click)="createNewBookArea()"/>
   <br>
 <br>
@@ -74,7 +69,8 @@
     <br/>
 
     תאור קצר על הספר<input  nbInput type="text" [(ngModel)]="chosen.BookInfo" />
-
+    <br/>    <br/>
+הסכום לתשלום<input  nbInput type="number" [(ngModel)]="chosen.Bookpayment" />
 
 </div>
 </div>

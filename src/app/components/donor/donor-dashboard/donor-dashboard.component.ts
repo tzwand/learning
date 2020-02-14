@@ -3,6 +3,7 @@ import { RequestService } from 'src/app/services/request/request.service';
 import { book } from 'src/app/classes/book';
 import { learner } from 'src/app/classes/learner';
 import { offer } from 'src/app/classes/offer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-donor-dashboard',
@@ -19,7 +20,7 @@ BooksForLearnerByDonor: book[];
 allBooksForRequest: book[];
 
 numberOfActiveLearning = 4;
-  constructor(private req: RequestService) { }
+  constructor(private req: RequestService,private router: Router) { }
 
   ngOnInit() {
 
@@ -43,8 +44,9 @@ numberOfActiveLearning = 4;
 // this.LearnersForBookByDonor=this.req.getLearnesForBookByDonor();
 
   }
-  showLearners(){
-
-  }
-
+  showLearners(){ }
+addNewRequest()
+{
+  this.router.navigate(['/donor']);
+}
 }

@@ -30,6 +30,7 @@ export const appNavigations = [
   { path: 'login/:type', component: NewLoginComponent },
   { path: 'resetPassword/:type', component: ResetPasswordComponent },
   { path: 'register/:type', component: NewRegisterComponent },
+
   {
     path: 'learner', component: LearnerScreenComponent,
     // children: [

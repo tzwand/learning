@@ -33,8 +33,8 @@ export class AppComponent implements OnInit {
 
    itemsLearner= [
     {
-      title: 'עמוד הבית',
-     link: 'learner/dashboard'
+      title: 'אודות',
+     link: 'start'
       // link: sessionStorage.getItem('userType') =='learner'? 'learner/dashboard':'donor/dashboard'
     },
     {
@@ -43,17 +43,17 @@ export class AppComponent implements OnInit {
     }
    ];
 
-   itemsDonor= [
-    {
-      title: 'עמוד הבית',
-     link: 'donor/dashboard'
-      // link: sessionStorage.getItem('userType') =='learner'? 'learner/dashboard':'donor/dashboard'
-    },
-    {
-      title: 'יציאה',
-      link: '/'
-    }
-   ];
+  //  itemsDonor= [
+  //   {
+  //     title: 'אורות',
+  //    link: 'staert'
+  //     // link: sessionStorage.getItem('userType') =='learner'? 'learner/dashboard':'donor/dashboard'
+  //   },
+  //   {
+  //     title: 'יציאה',
+  //     link: '/'
+  //   }
+  //  ];
  
  
   data1: person[]
@@ -111,7 +111,7 @@ init=false;
   
    this.init=true;
     this.userTitleToDisplay=sessionStorage.getItem('userType');
-     this.sidebarItems=this.userTitleToDisplay=="donor"?this.itemsDonor:this.itemsLearner;
+     this.sidebarItems=this.itemsLearner;
     this.navDashboardlink=this.userTitleToDisplay+'/dashboard';
 this.userToDisplay=sessionStorage.getItem('userEmail') ? sessionStorage.getItem('userEmail'): ""
     this.cards = ["hello", "how ", "are", "you", "today"]

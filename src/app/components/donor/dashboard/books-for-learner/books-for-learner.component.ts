@@ -12,12 +12,12 @@ import { matching } from 'src/app/classes/matching';
   styleUrls: ['./books-for-learner.component.css']
 })
 export class BooksForLearnerComponent implements OnInit {
-  @Input() learner:learner;
-  @Output() countActiveLearning = new EventEmitter<number>();
+@Input() learner:learner;
+@Output() countActiveLearning = new EventEmitter<number>();
 learners: learner[];
 books: book[];
 m:matching;
-  constructor( private req:RequestService,private learning:AddLearningService) { }
+constructor( private req:RequestService,private learning:AddLearningService) { }
 
   ngOnInit() {
     this.req.getBooksForLearnerByDonorBooks(this.learner.learnerId,
@@ -33,6 +33,4 @@ m:matching;
     (success => {this.m = success as matching,console.log(this.m) ;},
     error => {console.log(error); });
   }
-
-
 }

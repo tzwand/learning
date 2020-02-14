@@ -16,28 +16,35 @@
 </select> -->
 <h4 class="text-primary"> טווח זמן: </h4>
 
-<input nbInput
+<!-- <input nbInput
 fullWidth
 placeholder="בחר טווח תאריכים לתוכנית"
 [nbDatepicker]="formpicker"
 [formControl]="dateFormControl"
 #formControl="ngForm">
-<nb-rangepicker #formpicker></nb-rangepicker>
+<nb-rangepicker #formpicker></nb-rangepicker> -->
 <!-- <p>Is valid: {{ dateFormControl.valid }}</p> -->
 <!-- <br>
 <br> -->
+
+<p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true"></p-calendar>
 
 <h4 class="text-primary"> תאריך אחרון להרשמה:</h4>
 <strong>עד לתאריך זה תוכל לבטל את ההצעה. בנוסף לכך המועמדים שלך יוכלו גם כן להסיר את המועמדות להצעה.</strong>
 <br>
 <!-- add validater -->
-<input [nbDatepicker]="datepicker">
+
+<!-- <input [nbDatepicker]="datepicker">
 
 <nb-datepicker #datepicker 
   (dateChange)=lastDateChosen($event) ></nb-datepicker>
     <nb-alert  size="tiny" status="danger" *ngIf="invalidDateAlert">
            תאריך אחרון להרשמה חייב להיות לפני תאריך ההתחלה של התוכנית
-            </nb-alert>
+            </nb-alert> -->
+
+            <p-calendar [(ngModel)]="this.req.request.registerEndDate"></p-calendar>
+
+
   <!-- <nb-datepicker  #datepicker [(ngModel)]="req.request.registerEndDate"></nb-datepicker>  -->
 <!-- <input [nbDatepicker]="datepicker" [formControl]="endDateFormControl" >
   maxValidator()
