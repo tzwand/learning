@@ -49,8 +49,12 @@ ngOnDestroy()
 //emits when date changed in nb date picker
 
  //retrieve the data from form control and update in server --on destroy too late
- this.req.request.reqStartDate=this.rangeDates[0];
- this.req.request.reqEndDate=this.rangeDates[1];
+//  this.req.request.reqStartDate=this.rangeDates[0];
+//  this.req.request.reqEndDate=this.rangeDates[1];
+
+  //  //retrieve the data from form control and update in server
+  //  this.req.request.reqStartDate=this.dateFormControl.value.start;
+  //  this.req.request.reqEndDate=this.dateFormControl.value.end;
 debugger
  this.invalidDateAlert=false;
 //check that the last register date is before the learnung start date

@@ -13,11 +13,11 @@ import { DatePipe } from '@angular/common'
   selector: 'app-new-register',
   templateUrl: './new-register.component.html',
   styleUrls: ['./new-register.component.css'],
-  providers: [DatePipe]
+
 })
 export class NewRegisterComponent implements OnInit {
 constructor( private route: ActivatedRoute,
-private router: Router,private service: UserService,private req:RequestService, private datePipe: DatePipe) { }
+private router: Router,private service: UserService,private req:RequestService) { }
 rangeDates: Date[];
 newperson: person;
 type: any;
@@ -26,6 +26,10 @@ dateFormControl = new FormControl({
   start:[new Date(Date.now()),Validators.required],
   end: [new Date(Date.now()),Validators.required],
 });
+ngModelDate = {
+  start: new Date(),
+  end: new Date(),
+};
   ngOnInit() {
     this.service.currentLearner= new learner("","","","");
     this.req.getOccuptions().subscribe((success)=>{ this.occupations= success;
@@ -65,9 +69,12 @@ else if (this.type == 0){
   }
   
  
-  this.service.currentLearner.startDate=this.datePipe.transform(this.rangeDates[0], 'yyyy-MM-dd HH:mm:ss.SSS');
+  // this.service.currentLearner.startDate=this.datePipe.transform(this.rangeDates[0], 'yyyy-MM-dd HH:mm:ss.SSS');
   
-  this.service.currentLearner.endDate=this.datePipe.transform(this.rangeDates[1], 'yyyy-MM-dd HH:mm:ss.SSS');
+  // this.service.currentLearner.endDate=this.datePipe.transform(this.rangeDates[1], 'yyyy-MM-dd HH:mm:ss.SSS');
+
+  this.service.currentLearner.startDate=(this.ngModelDate.start);
+  this.service.currentLearner.endDate=(this.ngModelDate.end);
   debugger
 
   //the create function only puts the basic information about the learner
