@@ -14,14 +14,25 @@
   <option *ngFor="let t of times" name="timeDesc">{{t.timeDesc}}</option>
 </select> -->
 <h4 class="text-primary"> טווח זמן: </h4>
+<input nbInput placeholder="{{ngModelDate.start | date}} - {{ngModelDate.end | date}}" 
+[nbDatepicker]="ngmodel" [(ngModel)]="ngModelDate" ngModelDate.end>
+<nb-rangepicker #ngmodel
 
-<input nbInput
+ > </nb-rangepicker> 
+
+ <!-- prev version -->
+ 
+<!-- <input nbInput
 fullWidth
 placeholder="בחר טווח תאריכים לתוכנית"
 [nbDatepicker]="formpicker"
 [formControl]="dateFormControl"
 #formControl="ngForm">
-<nb-rangepicker #formpicker></nb-rangepicker>
+<nb-rangepicker #formpicker></nb-rangepicker> -->
+
+
+
+
 <!-- <p>Is valid: {{ dateFormControl.valid }}</p> -->
 <!-- <br>
 <br> -->
@@ -30,6 +41,9 @@ placeholder="בחר טווח תאריכים לתוכנית"
 <strong>עד לתאריך זה תוכל לבטל את ההצעה. בנוסף לכך המועמדים שלך יוכלו גם כן להסיר את המועמדות להצעה.</strong>
 <br>
 <!-- add validater -->
+
+
+
 <input [nbDatepicker]="datepicker">
 
 <nb-datepicker #datepicker 

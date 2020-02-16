@@ -75,10 +75,12 @@ sendReq(): Observable<any> {
   };
   
 sendReqList(): Observable<any> {
-  return this.http.post<any> (environment.BASIC_URL + 'api/forRequest/addRequestListPost', this.helpArrayConvertBooksToReqs);
+  debugger
+  return this.http.post<any>(environment.BASIC_URL + 'api/forRequest/addRequestListPost',this.helpArrayConvertBooksToReqs);
  };
   totalPayment=0;
   calcTotalPayments(){
+    this.totalPayment=0;
      //this for donor display
      this.reqBooks.forEach(book => {
       this.totalPayment+=book.Bookpayment;
@@ -87,18 +89,22 @@ sendReqList(): Observable<any> {
   helpArrayConvertBooksToReqs:offer[];
   createReqs(){
     debugger
-   
+   this.helpArrayConvertBooksToReqs=[];
     this.reqBooks.forEach(book => {
       //price calc with the right percentage from sos payment using previous function
   //  var percentage=this.totalPayment/book.Bookpayment;
-    this.request.payment=book.Bookpayment+this.request.sosPayment
+    this.request.payment=book.Bookpayment
     // /percentage;
       this.request.donorEmail=sessionStorage.getItem('donorEmail') ;
       this.request.password= sessionStorage.getItem("userPassword");
       this.request.BookId=book.bookId;
       this.request.BookName=book.BookName;
-     
-      this.helpArrayConvertBooksToReqs.concat(this.request);
+
+      let copy = Object.assign({}, this.request)
+     if(this.helpArrayConvertBooksToReqs.length==0)
+     this.helpArrayConvertBooksToReqs=[copy];
+     else
+      this.helpArrayConvertBooksToReqs.push(copy);
     //  this.sendReq().subscribe(success=>{console.log(success)},error=>{console.log(error)});
     });
        this.sendReqList().subscribe(success=>{console.log(success)},error=>{console.log(error)});

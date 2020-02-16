@@ -43,6 +43,7 @@ ngModelDate = {
       });
   }
  saveForm(){
+   debugger
   if (this.type == 1)
  {
   this.service.addDonor(this.newperson.name , this.newperson.email)

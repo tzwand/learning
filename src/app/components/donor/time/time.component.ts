@@ -20,7 +20,10 @@ from: Date;
 until: Date;
 times;
 chosenTime
-
+ngModelDate = {
+  start: new Date(),
+  end: new Date(),
+};
 dateFormControl = new FormControl({
   start:[new Date(Date.now()),Validators.required],
   end: [new Date(Date.now()),Validators.required],
@@ -33,8 +36,10 @@ dateFormControl = new FormControl({
 ngOnDestroy()
 {
   //retrieve the data from form control and update in server
-  this.req.request.reqStartDate=this.dateFormControl.value.start;
-  this.req.request.reqEndDate=this.dateFormControl.value.end;
+  this.req.request.reqStartDate=(this.ngModelDate.start);
+
+  this.req.request.reqEndDate=(this.ngModelDate.end);
+  console.log(this.req)
 }
   ngOnInit() {
     this.getTimes();
@@ -56,6 +61,12 @@ ngOnDestroy()
   //  this.req.request.reqStartDate=this.dateFormControl.value.start;
   //  this.req.request.reqEndDate=this.dateFormControl.value.end;
 debugger
+
+this.req.request.reqStartDate=(this.ngModelDate.start);
+
+this.req.request.reqEndDate=(this.ngModelDate.end);
+
+console.log(this.req)
  this.invalidDateAlert=false;
 //check that the last register date is before the learnung start date
 if(event>this.req.request.reqStartDate)
