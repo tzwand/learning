@@ -4,7 +4,9 @@
 <nb-card accent="success" card-background-color="#ffffff">
     <nb-card-header>
 
-        <h3 class="text-info">שלום {{event.extendedProps.learnerName}},
+        <h3 class="text-info">שלום 
+            <!-- {{event.extendedProps.learnerName}} -->
+            ,
             תודה שבחרת באוצר הלימוד  </h3>
   </nb-card-header>
   <nb-card-body>
@@ -54,12 +56,12 @@
      <h4 class="text-success">
         <i class="nb-person"></i> תשלום  </h4>
     {{event.extendedProps.payment}}
-    <h4 class="text-success">
-        <i class="nb-person"></i> תאריך להגדלת תשלום</h4>
+    <!-- <h4 class="text-success"> -->
+        <!-- <i class="nb-person"></i> תאריך להגדלת תשלום</h4>
     {{event.extendedProps.registerEndDate}}
     <h4 class="text-success">
         <i class="nb-person"></i> תשלום מוגדל  </h4>
-    {{event.extendedProps.registerEndDate}}
+    {{event.extendedProps.registerEndDate}} -->
     <br>
   <button nbButton (click)="submit()">אישור</button>
   <button nbButton (click)="cancelLearning()">ביטול הלימוד</button>

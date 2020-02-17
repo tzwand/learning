@@ -49,13 +49,13 @@ export class LearnerScreenComponent implements OnInit {
   //   cancelButtonContent: 'ביטול',
   // },
   columns: {
-    reqId: {
-      title: 'קוד בקשה'
-    },
+    // reqId: {
+    //   title: 'קוד בקשה'
+    // },
    
-    BookId: {
-      title: 'קוד הספר'
-    },
+    // BookId: {
+    //   title: 'קוד הספר'
+    // },
         BookName: {
           title: 'שם הספר'
         },
@@ -165,6 +165,7 @@ this.data= new Array<any>()
   }
 
   onSuccess(){
+    console.log(this.offers)
     if(this.offers[0]!=undefined){
     console.log("BookName:"+ this.offers[0].reqPurpose +"extraInfo:"+ this.offers[0].extraInfo)
     for (let i = 0; i < this.offers.length; i++) {
@@ -172,17 +173,17 @@ this.data= new Array<any>()
       this.data.push
         ({
         
-          reqId:this.offers[i].reqId,         
-          BookId:this.offers[i].BookId,
+          //reqId:this.offers[i].reqId,         
+          //BookId:this.offers[i].BookId,
           BookName: this.offers[i].BookName,
           reqPurpose: this.offers[i].reqPurpose,
-           extraInfo: this.offers[i].extraInfo,
+          extraInfo: this.offers[i].extraInfo,
 
-           reqStartDate: this.offers[i].reqStartDate, 
-           registerEndDate:this.offers[i].registerEndDate,
+          reqStartDate: this.offers[i].reqStartDate, 
+          registerEndDate:this.offers[i].registerEndDate,
           reqEndDate: this.offers[i].reqEndDate,
           timeDesc: this.offers[i].timeDesc,
-           payment: this.offers[i].payment
+          payment: this.offers[i].payment
         });
         this.show=true
     }
