@@ -59,6 +59,8 @@ else if (this.type == 0){
 
  this.service.currentLearner.email=this.newperson.email;
  this.service.currentLearner.name= this.newperson.name;
+ this.service.currentLearner.startDate=(this.ngModelDate.start);
+ this.service.currentLearner.endDate=(this.ngModelDate.end);
   this.service.addLearnerWithDetails
   ( this.service.currentLearner)
     .subscribe(success => { 
@@ -74,13 +76,12 @@ else if (this.type == 0){
   
   // this.service.currentLearner.endDate=this.datePipe.transform(this.rangeDates[1], 'yyyy-MM-dd HH:mm:ss.SSS');
 
-  this.service.currentLearner.startDate=(this.ngModelDate.start);
-  this.service.currentLearner.endDate=(this.ngModelDate.end);
+
   debugger
 
   //the create function only puts the basic information about the learner
   //update the extra information
-  this.service.updateLearner(this.service.currentLearner)
+  //this.service.updateLearner(this.service.currentLearner)
 this.newperson = new person();
     }
     learner;
