@@ -9,11 +9,12 @@ import { ConfirmLearningComponent } from '../confirm-learning/confirm-learning.c
 import { DialogService } from 'primeng/api';
 import { MatDialogRef, MatDialog } from '@angular/material';
 import { filter, delay, switchMap } from 'rxjs/operators';
-
+import { DatePipe } from '@angular/common' 
 @Component({
   selector: 'app-learner-screen',
   templateUrl: './learner-screen.component.html',
-  styleUrls: ['./learner-screen.component.css']
+  styleUrls: ['./learner-screen.component.css'],
+  providers:[DatePipe]
 })
 export class LearnerScreenComponent implements OnInit {
   fileNameDialogRef: MatDialogRef<ConfirmLearningComponent>;
@@ -150,7 +151,7 @@ show
   canContinue= false;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private dialog: MatDialog, private addService: AddLearningService,private windowService: NbWindowService,private dialogService:NbDialogService) {}
+  constructor(private datePipe: DatePipe,private dialog: MatDialog, private addService: AddLearningService,private windowService: NbWindowService,private dialogService:NbDialogService) {}
 
   ngOnInit() {
   this.show=false
@@ -178,10 +179,12 @@ this.data= new Array<any>()
           BookName: this.offers[i].BookName,
           reqPurpose: this.offers[i].reqPurpose,
           extraInfo: this.offers[i].extraInfo,
+          
 
-          reqStartDate: this.offers[i].reqStartDate, 
-          registerEndDate:this.offers[i].registerEndDate,
-          reqEndDate: this.offers[i].reqEndDate,
+          reqStartDate: this.datePipe.transform(this.offers[i].reqStartDate, 'yyyy/MM/dd'), 
+          registerEndDate:this.datePipe.transform(this.offers[i].registerEndDate, 'yyyy/MM/dd'),
+          reqEndDate: this.datePipe.transform(this.offers[i].reqEndDate, 'yyyy/MM/dd'),
+
           timeDesc: this.offers[i].timeDesc,
           payment: this.offers[i].payment
         });

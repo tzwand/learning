@@ -36,11 +36,11 @@
  
     <h4 class="text-success"> 
              <i class="nb-person"></i> תאריך התחלה</h4>
-        {{event.start}}
+        {{event.start|date}}
         <br>
         <h4 class="text-success">
             <i class="nb-person"></i>תאריך סיום</h4>
-            {{event.end}}
+            {{event.end|date}}
         <br>
          <h4 class="text-success">
             <i class="nb-person"></i> טווח זמן</h4>
@@ -52,7 +52,7 @@
         <br>
         <h4 class="text-success">
             <i class="nb-person"></i> תאריך סיום הרשמה</h4>
-        {{event.extendedProps.registerEndDate}}
+        {{event.extendedProps.registerEndDate|date}}
      <h4 class="text-success">
         <i class="nb-person"></i> תשלום  </h4>
     {{event.extendedProps.payment}}
