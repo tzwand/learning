@@ -55,6 +55,7 @@ import { ProfileComponent } from './components/login/profile/profile.component';
 import { VolunteerDashboardComponent} from './components/learner/volunteerLearner/volunteer-dashboard/volunteer-dashboard.component';
 import { VolunteerServiceService } from './services/volunteer-service.service';
 import { StartComponent } from './components/misc/start/start.component';
+import { InitialComponent } from './components/misc/initial/initial.component';
 
 
 @NgModule({
@@ -76,7 +77,7 @@ import { StartComponent } from './components/misc/start/start.component';
     NewRegisterComponent,
     FinalScreenComponent,
     NewLoginComponent, BookComponent, CalenderComponent, LearnerDashboardComponent,
-     StepCardComponent, ResetPasswordComponent, GroupsSettingsComponent,DonorDashboardComponent,ConfirmLearningComponent, LearenrsPerBookComponent, BooksForLearnerComponent, DashboardRequestsComponent, LearnerDetailsComponent, DashboardLearnersComponent, DashboardBooksComponent, LearnerEventDetailsComponent, ExcelComponent, ProfileComponent, VolunteerDashboardComponent, StartComponent
+     StepCardComponent, ResetPasswordComponent, GroupsSettingsComponent,DonorDashboardComponent,ConfirmLearningComponent, LearenrsPerBookComponent, BooksForLearnerComponent, DashboardRequestsComponent, LearnerDetailsComponent, DashboardLearnersComponent, DashboardBooksComponent, LearnerEventDetailsComponent, ExcelComponent, ProfileComponent, VolunteerDashboardComponent, StartComponent, InitialComponent
 
   ],
   imports: [

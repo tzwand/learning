@@ -40,7 +40,8 @@ export class RequestService {
   }
   getTimes() {
     if (this.times == null) {
-      this.http.get<Array<Time>>(environment.BASIC_URL + 'api/forRequest/GetTimes').subscribe(success => { this.times = success; }, error => { console.log(error); });
+      this.http.get<Array<Time>>(environment.BASIC_URL + 'api/forRequest/GetTimes')
+      .subscribe(success => { this.times = success; }, error => { console.log(error); });
     }
     console.log(this.donor);
     

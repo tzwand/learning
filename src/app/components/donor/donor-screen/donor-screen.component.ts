@@ -9,20 +9,19 @@ import { NbStepperComponent } from '@nebular/theme';
 })
 export class DonorScreenComponent implements OnInit {
   @ViewChild('stepper') stepper: NbStepperComponent;
-  constructor( private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit() {
   }
-newl(){
-  this.router.navigate(['/purpose']);
-}
-nextStep(event){
-  if(event==true)
-  {
-    this.stepper.next();
+  newl() {
+    this.router.navigate(['/purpose']);
   }
- 
+  nextStep(event) {
+    if (event == true) {
+      this.stepper.next();
+    }
+
   }
 
 stepBack(event){
