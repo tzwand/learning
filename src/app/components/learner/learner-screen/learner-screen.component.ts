@@ -60,9 +60,7 @@ export class LearnerScreenComponent implements OnInit {
         BookName: {
           title: 'שם הספר'
         },
-        extraInfo: {
-          title: 'מידע נוסף'
-        },
+     
         reqStartDate: {
           title: 'תאריך התחלה'
         },
@@ -80,6 +78,9 @@ export class LearnerScreenComponent implements OnInit {
         },
         reqPurpose: {
           title: 'מוקדש ל:'
+        },
+        extraInfo: {
+          title: 'מידע נוסף'
         }
 
       },
