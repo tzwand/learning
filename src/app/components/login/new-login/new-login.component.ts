@@ -29,6 +29,7 @@ export class NewLoginComponent implements OnInit {
         this.type = paramsFromUrl.type;
       });
   }
+  
   saveForm() {
     debugger
     sessionStorage.setItem('userEmail', this.newperson.email);
@@ -41,7 +42,7 @@ export class NewLoginComponent implements OnInit {
         .subscribe(success => {
         if (success != null) { this.router.navigate(['/donor/dashboard']),
         sessionStorage.setItem('donorEmail', success.donorEmail),
-        sessionStorage.setItem('donorName', success.donorName),
+        sessionStorage.setItem('donorName',success.donorName),
         console.log(success);
         }
          else { this.goRegister = true; } }
