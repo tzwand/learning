@@ -9,7 +9,7 @@ import { RequestService } from '../../../services/request/request.service';
   styleUrls: ['./purpose.component.css']
 })
 export class PurposeComponent implements OnDestroy, OnInit {
-  @Output() continue = new EventEmitter();
+@Output() continue = new EventEmitter();
 email : string
 userName: string
 donor:donor
