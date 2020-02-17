@@ -26,7 +26,7 @@ import { StartComponent } from './app/components/misc/start/start.component';
 
 export const appNavigations = [
   { path: '', redirectTo: "/", pathMatch: 'full' },
-  { path: 'start/', component: StartComponent },
+  { path: 'start', component: StartComponent },
   { path: 'login/:type', component: NewLoginComponent },
   { path: 'resetPassword/:type', component: ResetPasswordComponent },
   { path: 'register/:type', component: NewRegisterComponent },

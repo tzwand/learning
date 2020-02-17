@@ -1,11 +1,4 @@
-<div class="rtl">
-  <nb-layout>
-    <nb-sidebar responsive>
-      <i class="eva eva-github"></i>
-      <div *ngIf="init"></div>
-      <nb-menu [items]="sidebarItems"></nb-menu>
-    </nb-sidebar>
-    <nb-layout-column layout-content-width=50%>
+
       <div class="rtl">
         <h2 class="text-success">ברוכים הבאים לאוצר הלימוד</h2>
         <br>
@@ -43,12 +36,3 @@
         <br>
         <strong>לתמיכה: otzarlimud@gmail.com</strong>
       </div>
-    </nb-layout-column>
-    <nb-layout-column layout-content-width=50%>
-      <div>
-        <nb-route-tabset [tabs]="tabs"></nb-route-tabset>
-      </div>
-      <router-outlet></router-outlet>
-    </nb-layout-column>
-  </nb-layout>
-</div>
