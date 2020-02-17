@@ -30,5 +30,14 @@ stepBack(event){
 {
   this.stepper.previous();
 }
+
+}
+navToDashboard()
+{
+  this.router.navigate(['donor/dashboard']);
+
+}
+navToProfile(){
+  this.router.navigate(['profile']);
 }
 }

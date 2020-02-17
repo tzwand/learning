@@ -5,6 +5,11 @@
 
 
 </router-outlet> -->
+
+<button nbButton (click)="navToDashboard()">לכל התוכניות</button>
+<button nbButton status="info" (click)="navToProfile()">לעריכת הפרופיל האישי</button>
+<br>
+<br>
 <nb-stepper orientation="horizontal" #stepper disableStepNavigation>
   <nb-step label="פרטים אישיים">
      <nb-card accent="success" card-background-color="#ffffff">

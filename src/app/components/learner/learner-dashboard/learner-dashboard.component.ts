@@ -17,4 +17,7 @@ export class LearnerDashboardComponent implements OnInit {
   addnewLearning(){
     this.router.navigate(['/learner']);
   }
+  navToProfile(){
+    this.router.navigate(['profile']);
+  }
 }

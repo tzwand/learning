@@ -49,4 +49,7 @@ addNewRequest()
 {
   this.router.navigate(['/donor']);
 }
+navToProfile(){
+  this.router.navigate(['profile']);
+}
 }

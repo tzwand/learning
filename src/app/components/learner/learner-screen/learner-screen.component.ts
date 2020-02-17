@@ -276,6 +276,10 @@ this.fileNameDialogRef
   navToCalander(){
     this.router.navigate(['learner/dashboard']);
   }
+  navToProfile( )
+  {
+    this.router.navigate(['profile']);
+  }
 
   onSaveConfirm(event) {
     alert("onSaveConfirm")
