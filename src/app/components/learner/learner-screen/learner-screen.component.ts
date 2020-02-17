@@ -10,6 +10,7 @@ import { DialogService } from 'primeng/api';
 import { MatDialogRef, MatDialog } from '@angular/material';
 import { filter, delay, switchMap } from 'rxjs/operators';
 import { DatePipe } from '@angular/common' 
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-learner-screen',
   templateUrl: './learner-screen.component.html',
@@ -152,7 +153,8 @@ show
   canContinue= false;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private datePipe: DatePipe,private dialog: MatDialog, private addService: AddLearningService,private windowService: NbWindowService,private dialogService:NbDialogService) {}
+  constructor(private datePipe: DatePipe,private dialog: MatDialog, private addService: AddLearningService,private windowService: NbWindowService,private dialogService:NbDialogService,private route: ActivatedRoute,
+    private router: Router) {}
 
   ngOnInit() {
   this.show=false
@@ -269,6 +271,10 @@ this.fileNameDialogRef
    
     event.confirm.resolve();
 
+  }
+
+  navToCalander(){
+    this.router.navigate(['learner/dashboard']);
   }
 
   onSaveConfirm(event) {
