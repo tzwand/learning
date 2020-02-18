@@ -2,18 +2,18 @@
  
  <nb-accordion *ngFor="let request of reqs"  [multi]=true > 
    <nb-accordion-item >
-   <nb-accordion-item-header >  <h4 class="text-info"> קוד בקשה </h4></nb-accordion-item-header>
+   <nb-accordion-item-header >  <h4 class="text-info"> קוד בקשה  </h4></nb-accordion-item-header>
    <nb-accordion-item-body>
      {{request.reqId}}
    </nb-accordion-item-body>
    </nb-accordion-item>
    <nb-accordion-item >
-    <nb-accordion-item-header >  <h4 class="text-info">פרטי הבקשה</h4></nb-accordion-item-header> 
+    <nb-accordion-item-header >  <h4 class="text-info">פרטי הבקשה  </h4></nb-accordion-item-header> 
     <nb-accordion-item-body>
        
      
         <h4 class="text-success">
-            <i class="nb-person"></i>מטרת הבקשה</h4>
+            <i class="nb-person"></i>מטרת הבקשה  </h4>
         {{request.reqPurpose}}
         <br>
         <h4 class="text-success">
@@ -30,26 +30,26 @@
 </nb-accordion-item-body>
 </nb-accordion-item>  
   <nb-accordion-item > 
-   <nb-accordion-item-header >  <h4 class="text-info">זמן</h4></nb-accordion-item-header>
+   <nb-accordion-item-header >  <h4 class="text-info">  זמן  </h4></nb-accordion-item-header>
   <nb-accordion-item-body>
       <h4 class="text-success">
-          <i class="nb-person"></i> תאריך התחלה</h4>
+          <i class="nb-person"></i>  תאריך התחלה  </h4>
       {{request.reqStartDate}}
       <br>
       <h4 class="text-success">
-          <i class="nb-person"></i>תאריך סיום</h4>
+          <i class="nb-person"></i>  תאריך סיום  </h4>
       {{request.reqEndDate}}
       <br>
       <h4 class="text-success">
-          <i class="nb-person"></i> טווח זמן</h4>
+          <i class="nb-person"></i>  טווח זמן  </h4>
       {{request.timeDesc}}
       <br>
       <h4 class="text-success">
-          <i class="nb-person"></i> סוג טווח זמן </h4>
+          <i class="nb-person"></i>  סוג טווח זמן  </h4>
       {{request.timeId}}
       <br>
       <h4 class="text-success">
-          <i class="nb-person"></i> תאריך סיום הרשמה</h4>
+          <i class="nb-person"></i>  תאריך סיום הרשמה  </h4>
       {{request.registerEndDate}}
  
 </nb-accordion-item-body>
@@ -57,7 +57,7 @@
 
   <nb-accordion-item>
 
-<nb-accordion-item-header >  <h4 class="text-info">תשלום</h4></nb-accordion-item-header>
+<nb-accordion-item-header >  <h4 class="text-info">  תשלום  </h4></nb-accordion-item-header>
 <nb-accordion-item-body>
     <h4 class="text-success">
         <i class="nb-person"></i> תשלום  </h4>
@@ -66,9 +66,10 @@
 </nb-accordion-item> 
 
   
-      <nb-accordion-item >
+      <nb-accordion-item>
    <nb-accordion-item-header > 
-    <a [routerLink]="['/learnersPerBook/'+request.BookId]" class="btn btn-link"> <h4 class="text-info">לומדים</h4></a>
+    <a [routerLink]="['/learnersPerBook/'+request.BookId]" 
+    class="btn btn-link"> <h4 class="text-info"> לומדים  </h4></a>
 </nb-accordion-item-header>
    <nb-accordion-item-body>
       <nb-accordion-item >

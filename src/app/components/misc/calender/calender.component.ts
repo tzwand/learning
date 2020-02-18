@@ -112,7 +112,7 @@ changeDafHayomei() {
 // this.myCalender.eventSources=this.visibleEvents;
 
 //  $('#calendar').fullCalendar('renderEvent', this.eventsDafHayomei, true);
- alert("ok")
+//  alert("ok")
 //  $('#mycalender').fullCalendar( 'removeEvents');
 //  $('#mycalender').fullCalendar('addEventSource', this.eventsDafHayomei);
 }

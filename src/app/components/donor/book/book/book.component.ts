@@ -225,7 +225,7 @@ updateParents(nodeId: number) {
    this.node = this.bookService.bookListFromServer[nodeId];
    this.oldPayment = + this.node.Bookpayment;
    console.log(this.oldPayment)
-  if (this.node.ParentId != 1004) {
+  if (this.node.ParentId != 1) {
     //find father update and recall the function
     for (let i=0;i<this.bookService.bookListFromServer.length;i++){
       if(this.bookService.bookListFromServer[i].BookId == this.node.ParentId){

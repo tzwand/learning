@@ -29,7 +29,7 @@ eventsDafHayomei = {
   url:"https://www.hebcal.com/hebcal/?v=1&cfg=fc&F=on&i=on&year=2019&month=x&yt=G&lg=h&c=off&geo=geoname&zip=&city=&geonameid=&b=18&m=50&.s",
 
   cache: true,
-  textColor: 'lightblue',
+  textColor: 'darkorchid',
   color:'transparent',
   selectable:false
 
@@ -87,8 +87,12 @@ eventSourceToAdd= {
 onGetCategoriesSuccess(){
   for (let i=0;i<this.catCount;i++)
   {
+    debugger
  var color;
-this.getColorForCategory(this.categories[i].BookName).subscribe(success=>{this.colorNewEvent=success ,this.colorNewEvent= this.colorNewEvent.slice(1,this.colorNewEvent.length-1),this.addEventSource(i);}
+this.getColorForCategory(this.categories[i].BookName).subscribe(success=>
+  {this.colorNewEvent=success ,
+    this.colorNewEvent= this.colorNewEvent.slice(1,this.colorNewEvent.length-1),
+    this.addEventSource(i);}
   ,err=>{console.error(err)});
 }
 }

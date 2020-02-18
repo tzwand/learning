@@ -82,6 +82,7 @@ export class ProfileComponent implements OnInit {
 
   }
   mychange(num) {
+    debugger
     if (num == 0)
       if (this.viewOccupations.find(x => x.gender == "male") == undefined) {
         this.viewOccupations = this.viewOccupations.concat(this.occupations.filter(v => v.gender == "male"))
